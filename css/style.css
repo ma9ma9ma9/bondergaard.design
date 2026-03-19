@@ -594,6 +594,12 @@ body.loaded .main {
   background: transparent;
 }
 
+.project-card__image--clear img {
+  object-fit: cover;
+  object-position: center center;
+  transform: scale(1.2);
+}
+
 /* Two-column image grid */
 .work__hero-grid {
   display: grid;
