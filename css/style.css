@@ -554,13 +554,22 @@ body.loaded .main {
 .work__description {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 0;
+  align-self: start;
+}
+
+.work__description h3 {
+  margin-bottom: 6px;
 }
 
 .work__description p {
-  font-size: clamp(15px, 1.8vw, 17px);
+  font-size: 16px;
   line-height: 1.8;
-  color: var(--grey-dim);
+  color: var(--white);
+}
+
+.work__description p + p {
+  margin-top: 24px;
 }
 
 /* 3. Full-width hero image */
@@ -582,6 +591,9 @@ body.loaded .main {
   display: flex;
   flex-direction: column;
   gap: 32px;
+  align-self: start;
+  border-right: 1px solid var(--grey-line);
+  padding-right: clamp(32px, 4vw, 64px);
 }
 
 .work__sidebar-label {
@@ -590,11 +602,12 @@ body.loaded .main {
   text-transform: uppercase;
   color: var(--grey-dim);
   font-weight: 400;
+  margin-top: 0;
   margin-bottom: 6px;
 }
 
 .work__sidebar-value {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--white);
   line-height: 1.6;
 }
@@ -659,6 +672,10 @@ body.loaded .main {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 24px;
+    border-right: none;
+    padding-right: 0;
+    border-bottom: 1px solid var(--grey-line);
+    padding-bottom: 24px;
   }
 }
 
