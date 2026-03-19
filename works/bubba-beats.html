@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bubba Beats — Bondergaard</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="loaded">
+
+  <div id="main" class="main">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header__left">
+        <a href="../index.html" class="header__name">Bondergaard</a>
+        <span class="header__title">Design &amp; Creative Direction</span>
+      </div>
+      <nav class="header__nav">
+        <a href="../index.html" class="nav-link nav-link--active">Index</a>
+        <a href="../about.html" class="nav-link">About</a>
+      </nav>
+    </header>
+
+    <!-- Project Detail -->
+    <main class="work">
+
+      <!-- 1. Title -->
+      <h1 class="work__title">Bubba Beats</h1>
+
+      <!-- 2. Description + sidebar -->
+      <div class="work__intro">
+
+        <aside class="work__sidebar">
+          <div class="work__sidebar-group">
+            <h3 class="work__sidebar-label">Type</h3>
+            <p class="work__sidebar-value">Side Project</p>
+          </div>
+          <div class="work__sidebar-group">
+            <h3 class="work__sidebar-label">Year</h3>
+            <p class="work__sidebar-value">2026</p>
+          </div>
+          <div class="work__sidebar-group">
+            <h3 class="work__sidebar-label">Tags</h3>
+            <p class="work__sidebar-value">iOS Development<br>Flutter<br>Self-Hosted</p>
+          </div>
+        </aside>
+
+        <div class="work__description">
+          <h3 class="work__sidebar-label">Overview</h3>
+          <p>I missed the good old days of managing my music library in iTunes—making sure every album had the right artwork, correct titles, everything organized exactly how I wanted it. That meant owning your music. With streaming services, you don't own anything. Songs disappear because of licensing deals, the audio quality is compressed, and algorithms decide what you listen to next.</p>
+          <p>So I built Bubba Beats: an iOS app that streams lossless FLAC files from my own home server. I set up a Raspberry Pi running Jellyfin to host the music library, accessible from anywhere. I also added an "Album of the Day" feature that presents a random album every day, a simple way to rediscover music I already own. No autoplay between albums, no recommendations. When one record ends, it stops, just like putting on a CD would.</p>
+          <p>The app is built with Flutter and connects to the server over Tailscale. The biggest design challenge was integrating with the native iOS music player. I released it through TestFlight so my family can use it on their phones too.</p>
+        </div>
+
+      </div>
+
+      <!-- 3. 2x2 image grid -->
+      <div class="work__hero-grid">
+        <div class="work__hero work__hero--clear">
+          <img src="../images/bubba-beats-project1.png" alt="Bubba Beats">
+        </div>
+        <div class="work__hero work__hero--clear">
+          <img src="../images/bubba-beats-project2.png" alt="Bubba Beats detail">
+        </div>
+        <div class="work__hero work__hero--clear">
+          <img src="../images/bubba-beats-project3.png" alt="Bubba Beats detail">
+        </div>
+        <div class="work__hero work__hero--clear">
+          <img src="../images/bubba-beats-project4.png" alt="Bubba Beats detail">
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Back + Next nav -->
+    <nav class="work__nav">
+      <a href="../index.html" class="work__nav-link work__nav-link--back">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        All Projects
+      </a>
+      <a href="#" class="work__nav-link work__nav-link--next">
+        Next Project
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <span class="footer__copy">&copy; 2026 Bondergaard</span>
+      <span class="footer__location">Copenhagen, DK</span>
+    </footer>
+
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

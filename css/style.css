@@ -586,6 +586,26 @@ body.loaded .main {
   display: block;
 }
 
+.work__hero--clear {
+  background: transparent;
+}
+
+.project-card__image--clear {
+  background: transparent;
+}
+
+/* Two-column image grid */
+.work__hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 96px;
+}
+
+.work__hero-grid .work__hero {
+  margin-bottom: 0;
+}
+
 /* Sidebar */
 .work__sidebar {
   display: flex;
