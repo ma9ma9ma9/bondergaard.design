@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bondergaard — Design</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="loading">
+
+  <!-- Welcome Animation -->
+  <div id="welcome" class="welcome">
+    <div class="welcome__inner">
+      <span class="welcome__name">Bondergaard</span>
+      <div class="welcome__bar">
+        <div class="welcome__bar-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main" class="main" aria-hidden="true">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header__left">
+        <a href="index.html" class="header__name">Bondergaard</a>
+        <span class="header__title">Design &amp; Creative Direction</span>
+      </div>
+      <nav class="header__nav">
+        <a href="index.html" class="nav-link nav-link--active">Index</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <p class="hero__text">
+        Designing thoughtful experiences at the intersection of craft and clarity.
+        Currently available for select projects.
+      </p>
+    </section>
+
+    <!-- Projects Toolbar -->
+    <div class="toolbar">
+      <span class="toolbar__count" id="project-count">12 Projects</span>
+      <div class="toolbar__toggle">
+        <button class="toggle-btn toggle-btn--active" id="grid-btn" aria-label="Grid view" title="Grid view">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <rect x="1" y="1" width="6" height="6" stroke="currentColor" stroke-width="1.2"/>
+            <rect x="9" y="1" width="6" height="6" stroke="currentColor" stroke-width="1.2"/>
+            <rect x="1" y="9" width="6" height="6" stroke="currentColor" stroke-width="1.2"/>
+            <rect x="9" y="9" width="6" height="6" stroke="currentColor" stroke-width="1.2"/>
+          </svg>
+        </button>
+        <button class="toggle-btn" id="list-btn" aria-label="List view" title="List view">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <line x1="1" y1="4" x2="15" y2="4" stroke="currentColor" stroke-width="1.2"/>
+            <line x1="1" y1="8" x2="15" y2="8" stroke="currentColor" stroke-width="1.2"/>
+            <line x1="1" y1="12" x2="15" y2="12" stroke="currentColor" stroke-width="1.2"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Project Grid -->
+    <main class="projects" id="projects" data-view="grid">
+
+      <article class="project-card" data-index="01">
+        <a href="works/ux-curator.html" class="project-card__link">
+          <div class="project-card__image">
+            <img src="images/ux-curator-card.jpg" alt="UX Curator" loading="lazy">
+            <div class="project-card__overlay"></div>
+          </div>
+          <div class="project-card__info">
+            <div class="project-card__meta">
+              <span class="project-card__num">01</span>
+              <span class="project-card__year">2025</span>
+            </div>
+            <h2 class="project-card__title">UX Curator</h2>
+            <p class="project-card__category">Product Design, Automation, AI</p>
+          </div>
+        </a>
+      </article>
+
+      <article class="project-card" data-index="02">
+        <a href="#" class="project-card__link">
+          <div class="project-card__image">
+            <img src="images/placeholder.jpg" alt="Project Two" loading="lazy">
+            <div class="project-card__overlay"></div>
+          </div>
+          <div class="project-card__info">
+            <div class="project-card__meta">
+              <span class="project-card__num">02</span>
+              <span class="project-card__year">2025</span>
+            </div>
+            <h2 class="project-card__title">Project Two</h2>
+            <p class="project-card__category">Digital Experience</p>
+          </div>
+        </a>
+      </article>
+
+      <article class="project-card" data-index="03">
+        <a href="#" class="project-card__link">
+          <div class="project-card__image">
+            <img src="images/placeholder.jpg" alt="Project Three" loading="lazy">
+            <div class="project-card__overlay"></div>
+          </div>
+          <div class="project-card__info">
+            <div class="project-card__meta">
+              <span class="project-card__num">03</span>
+              <span class="project-card__year">2024</span>
+            </div>
+            <h2 class="project-card__title">Project Three</h2>
+            <p class="project-card__category">Art Direction</p>
+          </div>
+        </a>
+      </article>
+
+      <article class="project-card" data-index="04">
+        <a href="#" class="project-card__link">
+          <div class="project-card__image">
+            <img src="images/placeholder.jpg" alt="Project Four" loading="lazy">
+            <div class="project-card__overlay"></div>
+          </div>
+          <div class="project-card__info">
+            <div class="project-card__meta">
+              <span class="project-card__num">04</span>
+              <span class="project-card__year">2024</span>
+            </div>
+            <h2 class="project-card__title">Project Four</h2>
+            <p class="project-card__category">Typography</p>
+          </div>
+        </a>
+      </article>
+
+      <article class="project-card" data-index="05">
+        <a href="#" class="project-card__link">
+          <div class="project-card__image">
+            <img src="images/placeholder.jpg" alt="Project Five" loading="lazy">
+            <div class="project-card__overlay"></div>
+          </div>
+          <div class="project-card__info">
+            <div class="project-card__meta">
+              <span class="project-card__num">05</span>
+              <span class="project-card__year">2024</span>
+            </div>
+            <h2 class="project-card__title">Project Five</h2>
+            <p class="project-card__category">Packaging</p>
+          </div>
+        </a>
+      </article>
+
+      <article class="project-card" data-index="06">
+        <a href="#" class="project-card__link">
+          <div class="project-card__image">
+            <img src="images/placeholder.jpg" alt="Project Six" loading="lazy">
+            <div class="project-card__overlay"></div>
+          </div>
+          <div class="project-card__info">
+            <div class="project-card__meta">
+              <span class="project-card__num">06</span>
+              <span class="project-card__year">2023</span>
+            </div>
+            <h2 class="project-card__title">Project Six</h2>
+            <p class="project-card__category">Motion Design</p>
+          </div>
+        </a>
+      </article>
+
+      <article class="project-card" data-index="07">
+        <a href="#" class="project-card__link">
+          <div class="project-card__image">
+            <img src="images/placeholder.jpg" alt="Project Seven" loading="lazy">
+            <div class="project-card__overlay"></div>
+          </div>
+          <div class="project-card__info">
+            <div class="project-card__meta">
+              <span class="project-card__num">07</span>
+              <span class="project-card__year">2023</span>
+            </div>
+            <h2 class="project-card__title">Project Seven</h2>
+            <p class="project-card__category">Web Design</p>
+          </div>
+        </a>
+      </article>
+
+      <article class="project-card" data-index="08">
+        <a href="#" class="project-card__link">
+          <div class="project-card__image">
+            <img src="images/placeholder.jpg" alt="Project Eight" loading="lazy">
+            <div class="project-card__overlay"></div>
+          </div>
+          <div class="project-card__info">
+            <div class="project-card__meta">
+              <span class="project-card__num">08</span>
+              <span class="project-card__year">2023</span>
+            </div>
+            <h2 class="project-card__title">Project Eight</h2>
+            <p class="project-card__category">Brand Identity</p>
+          </div>
+        </a>
+      </article>
+
+      <article class="project-card" data-index="09">
+        <a href="#" class="project-card__link">
+          <div class="project-card__image">
+            <img src="images/placeholder.jpg" alt="Project Nine" loading="lazy">
+            <div class="project-card__overlay"></div>
+          </div>
+          <div class="project-card__info">
+            <div class="project-card__meta">
+              <span class="project-card__num">09</span>
+              <span class="project-card__year">2022</span>
+            </div>
+            <h2 class="project-card__title">Project Nine</h2>
+            <p class="project-card__category">Editorial</p>
+          </div>
+        </a>
+      </article>
+
+      <article class="project-card" data-index="10">
+        <a href="#" class="project-card__link">
+          <div class="project-card__image">
+            <img src="images/placeholder.jpg" alt="Project Ten" loading="lazy">
+            <div class="project-card__overlay"></div>
+          </div>
+          <div class="project-card__info">
+            <div class="project-card__meta">
+              <span class="project-card__num">10</span>
+              <span class="project-card__year">2022</span>
+            </div>
+            <h2 class="project-card__title">Project Ten</h2>
+            <p class="project-card__category">Illustration</p>
+          </div>
+        </a>
+      </article>
+
+      <article class="project-card" data-index="11">
+        <a href="#" class="project-card__link">
+          <div class="project-card__image">
+            <img src="images/placeholder.jpg" alt="Project Eleven" loading="lazy">
+            <div class="project-card__overlay"></div>
+          </div>
+          <div class="project-card__info">
+            <div class="project-card__meta">
+              <span class="project-card__num">11</span>
+              <span class="project-card__year">2022</span>
+            </div>
+            <h2 class="project-card__title">Project Eleven</h2>
+            <p class="project-card__category">Art Direction</p>
+          </div>
+        </a>
+      </article>
+
+      <article class="project-card" data-index="12">
+        <a href="#" class="project-card__link">
+          <div class="project-card__image">
+            <img src="images/placeholder.jpg" alt="Project Twelve" loading="lazy">
+            <div class="project-card__overlay"></div>
+          </div>
+          <div class="project-card__info">
+            <div class="project-card__meta">
+              <span class="project-card__num">12</span>
+              <span class="project-card__year">2021</span>
+            </div>
+            <h2 class="project-card__title">Project Twelve</h2>
+            <p class="project-card__category">Digital Experience</p>
+          </div>
+        </a>
+      </article>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <span class="footer__copy">&copy; 2026 Bondergaard</span>
+      <span class="footer__location">Copenhagen, DK</span>
+    </footer>
+
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
