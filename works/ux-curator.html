@@ -25,30 +25,13 @@
     <!-- Project Detail -->
     <main class="work">
 
-      <!-- Header row: title + meta -->
-      <div class="work__header">
-        <h1 class="work__title">UX Curator</h1>
-        <div class="work__meta">
-          <span class="work__year">2025</span>
-          <span class="work__sep">—</span>
-          <span class="work__tags">Product Design, Automation, AI</span>
-        </div>
-      </div>
+      <!-- 1. Title -->
+      <h1 class="work__title">UX Curator</h1>
 
-      <!-- Hero image -->
-      <div class="work__hero">
-        <img src="../images/ux-curator-page.jpg" alt="UX Curator interface">
-      </div>
+      <!-- 2. Description + sidebar -->
+      <div class="work__intro">
 
-      <!-- Body: description + link -->
-      <div class="work__body">
-
-        <div class="work__description">
-          <p>Staying updated on what's happening in design used to mean visiting a bunch of different sites and sifting through a lot of stuff that wasn't relevant. So I came up with UX Curator, an automated digest built around sources I selected and a filtering prompt I wrote myself.</p>
-          <p>UX Curator pulls from RSS feeds, scores articles by relevance, and sends me a curated digest three times a week. The AI handles the filtering, I just read what makes the cut. It covers the stuff I actually care about—product design and HCI—and explains why each article is relevant to my current role.</p>
-        </div>
-
-        <div class="work__sidebar">
+        <aside class="work__sidebar">
           <div class="work__sidebar-group">
             <h3 class="work__sidebar-label">Type</h3>
             <p class="work__sidebar-value">Side Project</p>
@@ -69,8 +52,18 @@
               </svg>
             </a>
           </div>
+        </aside>
+
+        <div class="work__description">
+          <p>Staying updated on what's happening in design used to mean visiting a bunch of different sites and sifting through a lot of stuff that wasn't relevant. So I came up with UX Curator, an automated digest built around sources I selected and a filtering prompt I wrote myself.</p>
+          <p>UX Curator pulls from RSS feeds, scores articles by relevance, and sends me a curated digest three times a week. The AI handles the filtering, I just read what makes the cut. It covers the stuff I actually care about—product design and HCI—and explains why each article is relevant to my current role.</p>
         </div>
 
+      </div>
+
+      <!-- 3. Full-width hero image -->
+      <div class="work__hero">
+        <img src="../images/ux-curator-page.jpg" alt="UX Curator interface">
       </div>
 
     </main>

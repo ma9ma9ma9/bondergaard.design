@@ -533,77 +533,28 @@ body.loaded .main {
   max-width: 1200px;
 }
 
-/* Title + meta row */
-.work__header {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 32px;
-  padding-bottom: 32px;
-  border-bottom: 1px solid var(--grey-line);
-  margin-bottom: 48px;
-  flex-wrap: wrap;
-}
-
+/* 1. Title */
 .work__title {
   font-size: clamp(28px, 5vw, 52px);
   font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 1.1;
+  margin-bottom: 40px;
 }
 
-.work__meta {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-shrink: 0;
-}
-
-.work__year {
-  font-size: 13px;
-  color: var(--grey-dim);
-  letter-spacing: 0.04em;
-}
-
-.work__sep {
-  color: var(--grey-dim);
-  font-size: 13px;
-}
-
-.work__tags {
-  font-size: 13px;
-  color: var(--grey-dim);
-  letter-spacing: 0.02em;
-}
-
-/* Hero image */
-.work__hero {
-  width: 100%;
-  margin-bottom: 64px;
-  overflow: hidden;
-  background: var(--grey-subtle);
-}
-
-.work__hero img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Body: description + sidebar */
-.work__body {
+/* 2. Description + sidebar side by side */
+.work__intro {
   display: grid;
-  grid-template-columns: 1fr 220px;
-  gap: clamp(40px, 6vw, 96px);
+  grid-template-columns: 200px 1fr;
+  gap: clamp(32px, 4vw, 64px);
   align-items: start;
-  padding-bottom: 96px;
+  margin-bottom: 56px;
 }
 
 .work__description {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  max-width: 640px;
 }
 
 .work__description p {
@@ -612,13 +563,25 @@ body.loaded .main {
   color: var(--grey-dim);
 }
 
+/* 3. Full-width hero image */
+.work__hero {
+  width: 100%;
+  overflow: hidden;
+  background: var(--grey-subtle);
+  margin-bottom: 96px;
+}
+
+.work__hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* Sidebar */
 .work__sidebar {
   display: flex;
   flex-direction: column;
   gap: 32px;
-  position: sticky;
-  top: calc(var(--header-h) + 32px);
 }
 
 .work__sidebar-label {
@@ -688,26 +651,14 @@ body.loaded .main {
 
 /* Responsive */
 @media (max-width: 720px) {
-  .work__body {
+  .work__intro {
     grid-template-columns: 1fr;
   }
 
   .work__sidebar {
-    position: static;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 24px;
-    padding-top: 8px;
-    border-top: 1px solid var(--grey-line);
-  }
-
-  .work__header {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .work__meta {
-    flex-wrap: wrap;
   }
 }
 
