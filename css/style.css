@@ -181,14 +181,13 @@ body.loaded .main {
 .header__left {
   display: flex;
   align-items: baseline;
-  gap: 20px;
+  gap: 48px;
 }
 
 .header__name {
-  font-size: 14px;
+  font-size: clamp(15px, 2vw, 18px);
   font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
   transition: opacity 0.2s;
 }
 
@@ -197,7 +196,7 @@ body.loaded .main {
 }
 
 .header__title {
-  font-size: 12px;
+  font-size: clamp(15px, 2vw, 18px);
   color: var(--grey-dim);
   letter-spacing: 0.02em;
 }
@@ -208,9 +207,8 @@ body.loaded .main {
 }
 
 .nav-link {
-  font-size: 13px;
+  font-size: clamp(15px, 2vw, 18px);
   letter-spacing: 0.06em;
-  text-transform: uppercase;
   color: var(--grey-dim);
   transition: color 0.2s;
   position: relative;
@@ -258,7 +256,7 @@ body.loaded .main {
 .hero__text {
   font-size: clamp(15px, 2vw, 18px);
   line-height: 1.7;
-  color: var(--grey-dim);
+  color: var(--white);
   font-weight: 400;
 }
 
