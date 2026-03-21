@@ -594,7 +594,8 @@ body.loaded .main {
   margin-bottom: 96px;
 }
 
-.work__hero img {
+.work__hero img,
+.work__hero video {
   width: 100%;
   height: auto;
   display: block;
