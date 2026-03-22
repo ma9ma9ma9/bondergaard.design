@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MeditationPi — Bondergaard</title>
+  <title>LED Studio — Bondergaard</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="loaded">
@@ -26,7 +26,7 @@
     <main class="work">
 
       <!-- 1. Title -->
-      <h1 class="work__title">MeditationPi</h1>
+      <h1 class="work__title">LED Studio</h1>
 
       <!-- 2. Description + sidebar -->
       <div class="work__intro">
@@ -34,7 +34,7 @@
         <aside class="work__sidebar">
           <div class="work__sidebar-group">
             <h3 class="work__sidebar-label">Type</h3>
-            <p class="work__sidebar-value">Side Project</p>
+            <p class="work__sidebar-value">Work</p>
           </div>
           <div class="work__sidebar-group">
             <h3 class="work__sidebar-label">Year</h3>
@@ -42,39 +42,22 @@
           </div>
           <div class="work__sidebar-group">
             <h3 class="work__sidebar-label">Tags</h3>
-            <p class="work__sidebar-value">Hardware<br>Raspberry Pi<br>Interface Design</p>
+            <p class="work__sidebar-value">Web App<br>LED Animation<br>Prototyping</p>
           </div>
         </aside>
 
         <div class="work__description">
           <h3 class="work__sidebar-label">Overview</h3>
-          <p>Every meditation app I tried lived on my phone, the same device with notifications, messages, and every other distraction waiting one swipe away. Sitting down to meditate meant first navigating past all of that. And even during the session, knowing the phone was right there made it hard to fully disconnect.</p>
-          <p>So I built a dedicated device for it. MeditationPi is a small, purpose-built meditation device that does nothing else. You pick a session type, choose a duration, put on your headphones, and that's it. No notifications, no internet access. Just a quiet e-ink display and a guided session. I chose e-ink specifically because it's less distracting than a regular screen.</p>
-          <p>The hardware is a Raspberry Pi Zero 2 W with a Waveshare e-ink touchscreen and a battery pack, small enough to bring in your pocket. I designed and 3D printed a case to hold everything together. I wrote the interface in Python, keeping the UI minimal by design: dark background, bold type, two choices at a time. The constraint of a 2.13" e-ink screen turned out to be a feature.</p>
+          <p>Designing LED animations for hardware projects meant building them frame by frame in Figma, linking each state together just to see how something might move. The animations were never smooth, never accurate to what the hardware would actually show. Changing one thing meant rebuilding the whole sequence from scratch.</p>
+          <p>So I built LED Studio, a tool that actually lets you design animations the way they'll look on the hardware. You pick your motion, pattern, and color, and the animation plays back live in the browser at the right speed. You can set how many LEDs you're working with and switch between a linear strip or a radial ring depending on your form factor.</p>
+          <p>What used to take an afternoon of Figma work now takes a few minutes. When something feels right, you can send it directly to the physical hardware over WiFi or export a spec file for the engineering team.</p>
         </div>
 
       </div>
 
-      <!-- 3. Hero video -->
+      <!-- 3. Placeholder hero image -->
       <div class="work__hero">
-        <video src="../images/meditation-video.mp4" autoplay loop muted playsinline></video>
-      </div>
-
-      <!-- 4. Additional images -->
-      <div class="work__hero">
-        <img src="../images/meditation-project1.jpg" alt="MeditationPi detail">
-      </div>
-
-      <div class="work__hero">
-        <img src="../images/meditation-project2.jpg" alt="MeditationPi detail">
-      </div>
-
-      <div class="work__hero">
-        <img src="../images/meditation-project3.jpg" alt="MeditationPi detail">
-      </div>
-
-      <div class="work__hero">
-        <img src="../images/meditation-project4.jpg" alt="MeditationPi hardware">
+        <img src="../images/placeholder.jpg" alt="LED Studio">
       </div>
 
     </main>
