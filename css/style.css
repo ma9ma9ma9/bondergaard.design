@@ -882,6 +882,12 @@ body.loaded .main {
   }
 }
 
+@media (max-width: 1115px) {
+  .hero__break {
+    display: none;
+  }
+}
+
 @media (max-width: 600px) {
   :root {
     --header-h: 60px;
@@ -928,6 +934,10 @@ body.loaded .main {
   .hero__heading,
   .hero__text {
     grid-column: 1;
+  }
+
+  .hero__text {
+    margin-top: 24px;
   }
 
   .toolbar {
