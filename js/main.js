@@ -205,6 +205,29 @@
   }
 
   /* ============================================================
+     GREETING ROTATION
+  ============================================================ */
+
+  function initGreetingRotation() {
+    const el = document.querySelector('.hero__greeting');
+    if (!el) return;
+
+    const greetings = ['Hi!', 'Hej!', 'Hejsan!'];
+    let index = 0;
+
+    setInterval(() => {
+      el.classList.add('is-hidden');
+
+      setTimeout(() => {
+        index = (index + 1) % greetings.length;
+        el.textContent = greetings[index];
+        el.classList.remove('is-hidden');
+      }, 300);
+
+    }, 2300);
+  }
+
+  /* ============================================================
      INIT
   ============================================================ */
 
@@ -214,6 +237,7 @@
     initPageEntry();
     initAboutEntry();
     initHeader();
+    initGreetingRotation();
   });
 
 })();
