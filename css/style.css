@@ -186,8 +186,8 @@ body.loaded .main {
   padding: 0 var(--pad-x);
   height: var(--header-h);
   background: var(--black);
-  border-bottom: 1px solid var(--grey-line);
 }
+
 
 .header__left {
   display: flex;
@@ -260,6 +260,10 @@ body.loaded .main {
    ============================================================ */
 
 .hero {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
   padding: clamp(48px, 8vw, 96px) var(--pad-x) clamp(32px, 5vw, 64px);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -283,7 +287,7 @@ body.loaded .main {
   line-height: 1.7;
   color: var(--white);
   font-weight: 400;
-  text-align: left;
+  text-align: right;
   align-self: center;
 }
 
@@ -296,9 +300,22 @@ body.loaded .main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 var(--pad-x);
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--grey-line);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding: 0 var(--pad-x) 20px;
+  position: relative;
+}
+
+.toolbar::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: var(--pad-x);
+  right: var(--pad-x);
+  height: 1px;
+  background: var(--grey-line);
 }
 
 .toolbar__count {
@@ -340,7 +357,11 @@ body.loaded .main {
 
 .projects {
   flex: 1;
-  padding: var(--pad-x);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding: 24px var(--pad-x) var(--pad-x);
 }
 
 /* Grid layout */
@@ -554,8 +575,10 @@ body.loaded .main {
 
 .work {
   flex: 1;
-  padding: clamp(48px, 8vw, 96px) var(--pad-x) 0;
   max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: clamp(24px, calc(8vw - 24px), 72px) var(--pad-x) 0;
 }
 
 /* 1. Title */
@@ -564,7 +587,7 @@ body.loaded .main {
   font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 1.1;
-  margin-bottom: 40px;
+  margin-top: 6px;
 }
 
 /* 2. Description + sidebar side by side */
@@ -681,24 +704,35 @@ body.loaded .main {
   background: var(--grey-subtle);
 }
 
+/* Project header: "PROJECT" label + title left, nav right */
+.work__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
 /* Prev / Next nav */
 .work__nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 32px var(--pad-x);
-  border-top: 1px solid var(--grey-line);
+  gap: 48px;
+  flex-shrink: 0;
+  padding-left: 32px;
 }
 
 .work__nav-link {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0.06em;
-  text-transform: uppercase;
   color: var(--grey-dim);
   transition: color 0.2s, gap 0.3s var(--ease-out);
+}
+
+.work__nav-link svg {
+  transition: transform 0.3s var(--ease-out);
 }
 
 .work__nav-link:hover {
@@ -706,11 +740,11 @@ body.loaded .main {
 }
 
 .work__nav-link--back:hover {
-  gap: 6px;
+  gap: 14px;
 }
 
-.work__nav-link--next:hover {
-  gap: 14px;
+.work__nav-link--next:hover svg {
+  transform: translateX(4px);
 }
 
 /* Responsive */
@@ -731,26 +765,6 @@ body.loaded .main {
 }
 
 
-/* ============================================================
-   FOOTER
-   ============================================================ */
-
-.footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 24px var(--pad-x);
-  border-top: 1px solid var(--grey-line);
-  margin-top: auto;
-}
-
-.footer__copy,
-.footer__location {
-  font-size: 12px;
-  letter-spacing: 0.04em;
-  color: var(--grey-dim);
-}
-
 
 /* ============================================================
    ABOUT PAGE
@@ -758,6 +772,9 @@ body.loaded .main {
 
 .about {
   flex: 1;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
   padding: clamp(48px, 8vw, 96px) var(--pad-x);
   display: grid;
   grid-template-columns: 280px 1fr;
@@ -949,15 +966,8 @@ body.loaded .main {
 
   .hero__text {
     margin-top: 24px;
+    text-align: left;
   }
 
-  .toolbar {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
 
-  .footer {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
 }
