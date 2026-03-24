@@ -77,6 +77,17 @@ button {
    WELCOME ANIMATION
    ============================================================ */
 
+/* Skip animation on repeat visits — set before body renders to prevent flash */
+.bd-skip-welcome .welcome {
+  display: none;
+}
+.bd-skip-welcome .main {
+  opacity: 1;
+}
+.bd-skip-welcome body {
+  overflow: visible;
+}
+
 .welcome {
   position: fixed;
   inset: 0;
@@ -616,7 +627,7 @@ body.loaded .main {
   display: grid;
   grid-template-columns: 200px 1fr;
   gap: clamp(32px, 4vw, 64px);
-  align-items: start;
+  align-items: stretch;
   margin-bottom: 56px;
 }
 
@@ -624,7 +635,6 @@ body.loaded .main {
   display: flex;
   flex-direction: column;
   gap: 0;
-  align-self: start;
 }
 
 .work__description h3 {
@@ -686,7 +696,6 @@ body.loaded .main {
   display: flex;
   flex-direction: column;
   gap: 32px;
-  align-self: start;
   border-right: 1px solid var(--grey-line);
   padding-right: clamp(32px, 4vw, 64px);
 }

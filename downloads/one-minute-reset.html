@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Minute Reset</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #3a2a2e 0%, #4d3b3d 50%, #2e2228 100%);
+            background-size: 400% 400%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(230, 140, 100, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: breathePulse 12s ease-in-out infinite;
+            pointer-events: none;
+            transition: background 2s ease;
+        }
+
+        @keyframes breathePulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.3; }
+            33% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.5; }
+        }
+
+        .bokeh {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+            filter: blur(20px);
+            pointer-events: none;
+            animation: floatBokeh linear infinite;
+        }
+
+        @keyframes floatBokeh {
+            0% {
+                transform: translate(0, 0) scale(1);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.3;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translate(var(--tx), var(--ty)) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+            opacity: 0.9;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            opacity: 0.7;
+            font-weight: 300;
+        }
+
+        button {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 20px 50px;
+            font-size: 16px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        .orb-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 0 auto 40px;
+        }
+
+        .orb-outer {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 380px;
+            height: 380px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: opacity 0.5s ease;
+        }
+        
+        .orb-inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(0deg);
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: transparent;
+            border: 4px solid rgba(100, 180, 255, 0.9);
+            box-shadow: 
+                0 0 40px rgba(100, 180, 255, 0.5),
+                0 0 80px rgba(100, 180, 255, 0.25);
+            filter: blur(1px);
+            opacity: 0;
+            transition: width 4s cubic-bezier(0.4, 0.0, 0.2, 1), height 4s cubic-bezier(0.4, 0.0, 0.2, 1), border-color 1.5s ease, box-shadow 1.5s ease, transform 4s cubic-bezier(0.4, 0.0, 0.2, 1), opacity 0.5s ease;
+        }
+
+        .orb-inner.visible {
+            opacity: 1;
+        }
+        
+        .orb-inner::before {
+            display: none;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 0.8; }
+        }
+
+        .instruction {
+            font-size: 28px;
+            font-weight: 300;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+            letter-spacing: 2px;
+            opacity: 0.9;
+            position: absolute;
+            bottom: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            text-align: center;
+        }
+
+        .countdown-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        .countdown-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .countdown-number {
+            font-size: 60px;
+            font-weight: 300;
+            color: white;
+            text-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
+            letter-spacing: 2px;
+        }
+
+        @keyframes countdownPulse {
+            0% { 
+                transform: scale(0.5); 
+                opacity: 0; 
+            }
+            20% { 
+                transform: scale(1.05); 
+                opacity: 1; 
+            }
+            100% { 
+                transform: scale(1); 
+                opacity: 1; 
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="landing">
+            <h1>One Minute Reset</h1>
+            <p>A gentle breathing exercise to center yourself</p>
+            <button onclick="startExercise()">Begin</button>
+        </div>
+
+        <div id="exercise" class="hidden">
+            <div style="position: relative;">
+                <div class="orb-container">
+                    <div id="countdown" class="countdown-overlay">
+                        <div class="countdown-number">3</div>
+                    </div>
+                    <div class="orb-outer" id="orbOuter"></div>
+                    <div class="orb-inner" id="orbInner"></div>
+                </div>
+                <div class="instruction hidden" id="instruction">Breathe In</div>
+            </div>
+        </div>
+
+        <div id="completion" class="hidden">
+            <h1>Well Done</h1>
+            <p>You've taken a moment for yourself</p>
+            <button onclick="reset()">Another Breath</button>
+        </div>
+    </div>
+
+    <script>
+        const landing = document.getElementById('landing');
+        const exercise = document.getElementById('exercise');
+        const completion = document.getElementById('completion');
+        const orbInner = document.getElementById('orbInner');
+        const orbOuter = document.getElementById('orbOuter');
+        const instruction = document.getElementById('instruction');
+
+        let startTime;
+        let interval;
+        let bokehInterval;
+
+        // Start bokeh on page load for landing page
+        window.addEventListener('load', () => {
+            startBokeh();
+        });
+
+        function createBokeh() {
+            const bokeh = document.createElement('div');
+            bokeh.className = 'bokeh';
+            
+            // Random size
+            const size = 40 + Math.random() * 100;
+            bokeh.style.width = size + 'px';
+            bokeh.style.height = size + 'px';
+            
+            // Random starting position - spread across entire screen
+            bokeh.style.left = Math.random() * window.innerWidth + 'px';
+            bokeh.style.top = Math.random() * window.innerHeight + 'px';
+            
+            // Random drift - wider range for more spread
+            const tx = (Math.random() - 0.5) * 400;
+            const ty = (Math.random() - 0.5) * 300;
+            bokeh.style.setProperty('--tx', tx + 'px');
+            bokeh.style.setProperty('--ty', ty + 'px');
+            
+            // Random duration
+            const duration = 15 + Math.random() * 15;
+            bokeh.style.animationDuration = duration + 's';
+            
+            document.body.appendChild(bokeh);
+            
+            setTimeout(() => bokeh.remove(), duration * 1000);
+        }
+
+        function startBokeh() {
+            bokehInterval = setInterval(createBokeh, 2000);
+        }
+
+        function stopBokeh() {
+            if (bokehInterval) {
+                clearInterval(bokehInterval);
+                bokehInterval = null;
+            }
+            document.querySelectorAll('.bokeh').forEach(b => b.remove());
+        }
+
+        function startExercise() {
+            landing.classList.add('hidden');
+            exercise.classList.remove('hidden');
+            // Transition to blue background and blue pulse
+            document.body.style.transition = 'background 2s ease';
+            document.body.style.background = 'linear-gradient(135deg, #1a3a5e 0%, #2d3b5d 50%, #1e2f48 100%)';
+            // Change pulse glow to blue
+            const pulse = document.querySelector('body::before');
+            if (pulse) {
+                document.styleSheets[0].insertRule(`
+                    body::before {
+                        background: radial-gradient(circle, rgba(20, 100, 220, 0.15) 0%, transparent 70%) !important;
+                    }
+                `, 0);
+            }
+            
+            // Start countdown
+            const countdownOverlay = document.getElementById('countdown');
+            const countdownNumber = document.querySelector('.countdown-number');
+            let count = 3;
+            
+            // Initial animation
+            countdownNumber.style.animation = 'countdownPulse 0.6s ease-out';
+            
+            const countdownInterval = setInterval(() => {
+                count--;
+                if (count > 0) {
+                    countdownNumber.textContent = count;
+                    // Restart animation
+                    countdownNumber.style.animation = 'none';
+                    requestAnimationFrame(() => {
+                        countdownNumber.style.animation = 'countdownPulse 0.6s ease-out';
+                    });
+                } else {
+                    clearInterval(countdownInterval);
+                    countdownOverlay.classList.add('hidden');
+                    // Show inner circle and instruction
+                    orbInner.classList.add('visible');
+                    instruction.classList.remove('hidden');
+                    // Start breathing exercise
+                    startTime = Date.now();
+                    breathingCycle();
+                }
+            }, 1000);
+            
+            // Bokeh already running, no need to restart
+        }
+
+        function breathingCycle() {
+            interval = setInterval(() => {
+                const elapsed = Date.now() - startTime;
+                const totalRemaining = Math.max(0, 60 - Math.floor(elapsed / 1000));
+
+                if (totalRemaining <= 0) {
+                    clearInterval(interval);
+                    showCompletion();
+                    return;
+                }
+
+                // Determine phase - 12 second cycle (4s inhale + 8s exhale)
+                const cycleTime = elapsed % 12000;
+                
+                if (cycleTime < 4000) {
+                    // Inhale - 4 seconds - soft blue
+                    if (instruction.textContent !== 'Breathe In') {
+                        instruction.textContent = 'Breathe In';
+                        orbInner.style.borderColor = 'rgba(100, 180, 255, 0.9)';
+                        orbInner.style.boxShadow = `
+                            0 0 40px rgba(100, 180, 255, 0.5),
+                            0 0 80px rgba(100, 180, 255, 0.25)
+                        `;
+                    }
+                    orbInner.style.width = '380px';
+                    orbInner.style.height = '380px';
+                    orbInner.style.transform = 'translate(-50%, -50%) rotate(15deg)';
+                    orbInner.style.transition = 'width 4s cubic-bezier(0.4, 0.0, 0.2, 1), height 4s cubic-bezier(0.4, 0.0, 0.2, 1), border-color 1.5s ease, box-shadow 1.5s ease, transform 4s cubic-bezier(0.4, 0.0, 0.2, 1)';
+                } else {
+                    // Exhale - 8 seconds - soft warm orange
+                    if (instruction.textContent !== 'Breathe Out') {
+                        instruction.textContent = 'Breathe Out';
+                        orbInner.style.borderColor = 'rgba(230, 140, 100, 0.9)';
+                        orbInner.style.boxShadow = `
+                            0 0 40px rgba(230, 140, 100, 0.5),
+                            0 0 80px rgba(230, 140, 100, 0.25)
+                        `;
+                    }
+                    orbInner.style.width = '4px';
+                    orbInner.style.height = '4px';
+                    orbInner.style.transform = 'translate(-50%, -50%) rotate(-15deg)';
+                    orbInner.style.transition = 'width 8s cubic-bezier(0.4, 0.0, 0.2, 1), height 8s cubic-bezier(0.4, 0.0, 0.2, 1), border-color 1.5s ease, box-shadow 1.5s ease, transform 8s cubic-bezier(0.4, 0.0, 0.2, 1)';
+                }
+            }, 100);
+        }
+
+        function showCompletion() {
+            // Keep bokeh running
+            exercise.classList.add('hidden');
+            completion.classList.remove('hidden');
+        }
+
+        function reset() {
+            completion.classList.add('hidden');
+            landing.classList.remove('hidden');
+            orbInner.style.width = '4px';
+            orbInner.style.height = '4px';
+            orbInner.style.transform = 'translate(-50%, -50%) rotate(0deg)';
+            orbInner.style.borderColor = 'rgba(100, 180, 255, 0.9)';
+            orbInner.style.boxShadow = `
+                0 0 40px rgba(100, 180, 255, 0.5),
+                0 0 80px rgba(100, 180, 255, 0.25)
+            `;
+            // Transition back to warm amber background
+            document.body.style.background = 'linear-gradient(135deg, #3a2a2e 0%, #4d3b3d 50%, #2e2228 100%)';
+            instruction.textContent = 'Breathe In';
+            
+            // Reset countdown and hide inner circle/instruction
+            const countdownOverlay = document.getElementById('countdown');
+            const countdownNumber = document.querySelector('.countdown-number');
+            countdownOverlay.classList.remove('hidden');
+            countdownNumber.textContent = '3';
+            orbInner.classList.remove('visible');
+            instruction.classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
