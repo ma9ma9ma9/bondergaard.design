@@ -228,6 +228,75 @@
   }
 
   /* ============================================================
+     CONTACT FORM
+  ============================================================ */
+
+  function initContactForm() {
+    const toggle = document.getElementById('contactToggle');
+    const expand = document.getElementById('contactExpand');
+    const textarea = document.getElementById('contactMessage');
+    const sendBtn = document.getElementById('contactSend');
+    const confirm = document.getElementById('contactConfirm');
+
+    if (!toggle || !expand) return;
+
+    let isOpen = false;
+
+    toggle.addEventListener('click', () => {
+      isOpen = !isOpen;
+      toggle.textContent = isOpen ? 'CLOSE' : 'SAY HI';
+      expand.classList.toggle('is-open', isOpen);
+      expand.setAttribute('aria-hidden', String(!isOpen));
+      if (!isOpen) {
+        textarea.value = '';
+        sendBtn.classList.remove('is-visible');
+        confirm.classList.remove('is-visible');
+      }
+    });
+
+    textarea.addEventListener('input', () => {
+      sendBtn.classList.toggle('is-visible', textarea.value.trim().length > 0);
+    });
+
+    sendBtn.addEventListener('click', async () => {
+      const msg = textarea.value.trim();
+      if (!msg) return;
+
+      sendBtn.disabled = true;
+      sendBtn.textContent = 'SENDING…';
+
+      try {
+        const res = await fetch('https://formspree.io/f/mnjoabez', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: msg }),
+        });
+
+        if (!res.ok) throw new Error('Submission failed');
+
+        confirm.textContent = "Message sent! I'll get back to you soon.";
+        confirm.classList.add('is-visible');
+        sendBtn.classList.remove('is-visible');
+        textarea.value = '';
+
+        setTimeout(() => {
+          confirm.classList.remove('is-visible');
+          isOpen = false;
+          toggle.textContent = 'SAY HI';
+          expand.classList.remove('is-open');
+          expand.setAttribute('aria-hidden', 'true');
+        }, 3000);
+      } catch (_) {
+        confirm.textContent = 'Something went wrong. Please try again.';
+        confirm.classList.add('is-visible');
+      } finally {
+        sendBtn.disabled = false;
+        sendBtn.textContent = 'SEND';
+      }
+    });
+  }
+
+  /* ============================================================
      INIT
   ============================================================ */
 
@@ -238,6 +307,7 @@
     initAboutEntry();
     initHeader();
     initGreetingRotation();
+    initContactForm();
   });
 
 })();
