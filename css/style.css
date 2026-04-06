@@ -435,6 +435,7 @@ body.loaded .main {
   transition: transform 0.7s var(--ease-out), filter 0.4s;
   filter: brightness(0.85);
   object-position: left center;
+  will-change: transform;
 }
 
 .projects[data-view="grid"] .project-card:hover .project-card__image img {
@@ -664,6 +665,15 @@ body.loaded .main {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.work__hero video.contain {
+  object-fit: contain;
+}
+
+.work__hero--tight {
+  margin-bottom: 24px;
+  background: none;
 }
 
 .work__hero--clear {
@@ -973,11 +983,6 @@ body.loaded .main {
    PLACEHOLDER IMAGE FALLBACK
    ============================================================ */
 
-.project-card__image img[src="images/placeholder.jpg"],
-.about__image img[src="images/placeholder-portrait.jpg"] {
-  /* Show a subtle pattern when placeholder isn't found */
-}
-
 /* Shimmer placeholder when image missing */
 .project-card__image {
   background: repeating-linear-gradient(
@@ -1045,11 +1050,6 @@ body.loaded .main {
 
 }
 
-@media (max-width: 1115px) {
-  .hero__break {
-    display: none;
-  }
-}
 
 @media (max-width: 600px) {
   :root {
@@ -1089,5 +1089,13 @@ body.loaded .main {
     padding-right: 24px;
   }
 
+}
 
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

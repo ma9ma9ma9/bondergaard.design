@@ -208,6 +208,8 @@
      GREETING ROTATION
   ============================================================ */
 
+  let greetingInterval;
+
   function initGreetingRotation() {
     const el = document.querySelector('.hero__greeting');
     if (!el) return;
@@ -215,7 +217,9 @@
     const greetings = ['Hi!', 'Hej!', 'Hejsan!'];
     let index = 0;
 
-    setInterval(() => {
+    if (greetingInterval) clearInterval(greetingInterval);
+
+    greetingInterval = setInterval(() => {
       el.classList.add('is-hidden');
 
       setTimeout(() => {
