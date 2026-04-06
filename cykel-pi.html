@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bondergaard.Design</title>
-  <link rel="icon" href="../favicon/favicon.ico" sizes="any">
-  <link rel="icon" href="../favicon/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="../favicon/apple-touch-icon.png">
-  <link rel="manifest" href="../favicon/site.webmanifest">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="favicon/favicon.ico" sizes="any">
+  <link rel="icon" href="favicon/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="loaded">
 
@@ -17,11 +17,11 @@
     <!-- Header -->
     <header class="header">
       <div class="header__left">
-        <a href="../work.html" class="header__name">Bondergaard.Design</a>
+        <a href="/" class="header__name">Bondergaard.Design</a>
       </div>
       <nav class="header__nav">
-        <a href="../work.html" class="nav-link nav-link--active">Work</a>
-        <a href="../about.html" class="nav-link">About</a>
+        <a href="/" class="nav-link nav-link--active">Work</a>
+        <a href="/about" class="nav-link">About</a>
       </nav>
     </header>
 
@@ -32,16 +32,16 @@
       <div class="work__header">
         <div>
           <h3 class="work__sidebar-label">Project</h3>
-          <h1 class="work__title">LED Studio</h1>
+          <h1 class="work__title">CYKEL.PI</h1>
         </div>
         <nav class="work__nav">
-          <a href="../work.html" class="work__nav-link work__nav-link--back">
+          <a href="/" class="work__nav-link work__nav-link--back">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             All
           </a>
-          <a href="bubba-beats.html" class="work__nav-link work__nav-link--next">
+          <a href="/led-studio" class="work__nav-link work__nav-link--next">
             Next
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -56,7 +56,7 @@
         <aside class="work__sidebar">
           <div class="work__sidebar-group">
             <h3 class="work__sidebar-label">Type</h3>
-            <p class="work__sidebar-value">Work</p>
+            <p class="work__sidebar-value">Side Project</p>
           </div>
           <div class="work__sidebar-group">
             <h3 class="work__sidebar-label">Year</h3>
@@ -64,22 +64,26 @@
           </div>
           <div class="work__sidebar-group">
             <h3 class="work__sidebar-label">Tags</h3>
-            <p class="work__sidebar-value">Web App<br>LED Animation<br>Prototyping</p>
+            <p class="work__sidebar-value">Raspberry Pi<br>Hardware<br>Bluetooth<br>Python<br>UI/UX Design</p>
           </div>
         </aside>
 
         <div class="work__description">
           <h3 class="work__sidebar-label">Overview</h3>
-          <p>Designing LED animations for hardware projects meant building them frame by frame in Figma, linking each state together just to see how something might move. The animations were never smooth, never accurate to what the hardware would actually show. Changing one thing meant rebuilding the whole sequence from scratch.</p>
-          <p>So I built LED Studio, a tool that actually lets you design animations the way they'll look on the hardware. You pick your motion, pattern, and color, and the animation plays back live in the browser at the right speed. You can set how many LEDs you're working with and switch between a linear strip or a radial ring depending on your form factor.</p>
-          <p>What used to take an afternoon of Figma work now takes a few minutes. When something feels right, you can send it directly to the physical hardware over WiFi or export a spec file for the engineering team.</p>
+          <p>Zwift wanted $180/year for software to use the bike trainer I already owned. I said no. Instead, I built CYKEL.PI, a custom bike computer on a Raspberry Pi that does everything I need: real-time power and cadence tracking, workout logging, and full control over my cycling data, all without paying for the subscription.</p>
+          <p>The whole thing runs on a 7-inch touchscreen that I mounted to my handlebars with 3D-printed arms and a custom case. It connects to my Zwift Hub One via Bluetooth and tracks every metric on the screen. I designed the entire UI in Figma with a dark theme and neon accents, then had Claude Code build it in PyQt5 to match pixel-for-pixel. It's completely open, completely mine, and completely free.</p>
         </div>
 
       </div>
 
-      <!-- 3. Hero video -->
+      <!-- 3. Hero image -->
+      <div class="work__hero" style="margin-bottom: 24px; background: none;">
+        <img src="images/cykel-pi-project1.jpg" alt="CYKEL.PI overview">
+      </div>
+
+      <!-- 4. Additional image -->
       <div class="work__hero">
-        <video src="../images/led-studio-project-video.mp4" autoplay loop muted playsinline></video>
+        <img src="images/cykel-pi-project2.jpg" alt="CYKEL.PI detail">
       </div>
 
     </main>
@@ -87,6 +91,6 @@
 
   </div>
 
-  <script src="../js/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
