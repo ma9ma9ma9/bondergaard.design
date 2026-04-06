@@ -17,10 +17,10 @@
     <!-- Header -->
     <header class="header">
       <div class="header__left">
-        <a href="../index.html" class="header__name">Bondergaard.Design</a>
+        <a href="../work.html" class="header__name">Bondergaard.Design</a>
       </div>
       <nav class="header__nav">
-        <a href="../index.html" class="nav-link nav-link--active">Work</a>
+        <a href="../work.html" class="nav-link nav-link--active">Work</a>
         <a href="../about.html" class="nav-link">About</a>
       </nav>
     </header>
@@ -32,16 +32,16 @@
       <div class="work__header">
         <div>
           <h3 class="work__sidebar-label">Project</h3>
-          <h1 class="work__title">Bubba Beats</h1>
+          <h1 class="work__title">LED Studio</h1>
         </div>
         <nav class="work__nav">
-          <a href="../index.html" class="work__nav-link work__nav-link--back">
+          <a href="../work.html" class="work__nav-link work__nav-link--back">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             All
           </a>
-          <a href="bosch-range.html" class="work__nav-link work__nav-link--next">
+          <a href="bubba-beats.html" class="work__nav-link work__nav-link--next">
             Next
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -56,7 +56,7 @@
         <aside class="work__sidebar">
           <div class="work__sidebar-group">
             <h3 class="work__sidebar-label">Type</h3>
-            <p class="work__sidebar-value">Side Project</p>
+            <p class="work__sidebar-value">Work</p>
           </div>
           <div class="work__sidebar-group">
             <h3 class="work__sidebar-label">Year</h3>
@@ -64,22 +64,22 @@
           </div>
           <div class="work__sidebar-group">
             <h3 class="work__sidebar-label">Tags</h3>
-            <p class="work__sidebar-value">iOS Development<br>Flutter<br>Self-Hosted</p>
+            <p class="work__sidebar-value">Web App<br>LED Animation<br>Prototyping</p>
           </div>
         </aside>
 
         <div class="work__description">
           <h3 class="work__sidebar-label">Overview</h3>
-          <p>I missed the good old days of managing my music library in iTunes, making sure every album had the right artwork, correct titles, everything organized exactly how I wanted it. That meant owning your music. With streaming services, you don't own anything. The audio quality is compressed, and algorithms decide what you listen to next.</p>
-          <p>So I built Bubba Beats: an iOS app that streams lossless FLAC files from my own home server. I set up a Raspberry Pi running Jellyfin to host the music library, accessible from anywhere. I also added an "Album of the Day" feature that presents a random album every day, a simple way to rediscover music I already own. No autoplay between albums, no recommendations. When one record ends, it stops, just like putting on a CD would.</p>
-          <p>The app is built with Flutter and connects to the server over Tailscale. I used Figma's MCP server integration with Claude in VS Code to feed it my design and streamline the design-to-code workflow. I released it through TestFlight so my family can use it on their phones too.</p>
+          <p>Designing LED animations for hardware projects meant building them frame by frame in Figma, linking each state together just to see how something might move. The animations were never smooth, never accurate to what the hardware would actually show. Changing one thing meant rebuilding the whole sequence from scratch.</p>
+          <p>So I built LED Studio, a tool that actually lets you design animations the way they'll look on the hardware. You pick your motion, pattern, and color, and the animation plays back live in the browser at the right speed. You can set how many LEDs you're working with and switch between a linear strip or a radial ring depending on your form factor.</p>
+          <p>What used to take an afternoon of Figma work now takes a few minutes. When something feels right, you can send it directly to the physical hardware over WiFi or export a spec file for the engineering team.</p>
         </div>
 
       </div>
 
-      <!-- 3. Full-width hero image -->
+      <!-- 3. Hero video -->
       <div class="work__hero">
-        <img src="../images/bubba-beats-project.jpg" alt="Bubba Beats">
+        <video src="../images/led-studio-project-video.mp4" autoplay loop muted playsinline></video>
       </div>
 
     </main>

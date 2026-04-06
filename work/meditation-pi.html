@@ -17,10 +17,10 @@
     <!-- Header -->
     <header class="header">
       <div class="header__left">
-        <a href="../index.html" class="header__name">Bondergaard.Design</a>
+        <a href="../work.html" class="header__name">Bondergaard.Design</a>
       </div>
       <nav class="header__nav">
-        <a href="../index.html" class="nav-link nav-link--active">Work</a>
+        <a href="../work.html" class="nav-link nav-link--active">Work</a>
         <a href="../about.html" class="nav-link">About</a>
       </nav>
     </header>
@@ -32,16 +32,16 @@
       <div class="work__header">
         <div>
           <h3 class="work__sidebar-label">Project</h3>
-          <h1 class="work__title">Color Picker</h1>
+          <h1 class="work__title">MeditationPi</h1>
         </div>
         <nav class="work__nav">
-          <a href="../index.html" class="work__nav-link work__nav-link--back">
+          <a href="../work.html" class="work__nav-link work__nav-link--back">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             All
           </a>
-          <a href="meditation-pi.html" class="work__nav-link work__nav-link--next">
+          <a href="one-minute-reset.html" class="work__nav-link work__nav-link--next">
             Next
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -56,30 +56,47 @@
         <aside class="work__sidebar">
           <div class="work__sidebar-group">
             <h3 class="work__sidebar-label">Type</h3>
-            <p class="work__sidebar-value">Work Project</p>
+            <p class="work__sidebar-value">Side Project</p>
           </div>
           <div class="work__sidebar-group">
             <h3 class="work__sidebar-label">Year</h3>
-            <p class="work__sidebar-value">2025</p>
+            <p class="work__sidebar-value">2026</p>
           </div>
           <div class="work__sidebar-group">
             <h3 class="work__sidebar-label">Tags</h3>
-            <p class="work__sidebar-value">Web App<br>ESP32<br>Hardware Integration</p>
+            <p class="work__sidebar-value">Hardware<br>Raspberry Pi<br>Interface Design</p>
           </div>
         </aside>
 
         <div class="work__description">
           <h3 class="work__sidebar-label">Overview</h3>
-          <p>Choosing the right LED color for physical products is often difficult. You'd pick a color on screen, send it off to production, and it would look completely different on the actual product. So I built a tool that lets us see colors on our knob sample before committing.</p>
-          <p>It's a simple color picker that connects to an ESP32 microcontroller inside one of our knob samples. The ESP32 controls an LED strip, and when you pick a color on the web interface, it updates the physical knob instantly. You connect to the local WiFi network, open the webpage, and start testing. You can switch between HEX, RGB, HSV, or HSL values, adjust brightness, and see exactly how each color looks on the actual hardware.</p>
-          <p>The knob is taped up in the photos because it's not on the market yet.</p>
+          <p>Every meditation app I tried lived on my phone, the same device with notifications, messages, and every other distraction waiting one swipe away. Sitting down to meditate meant first navigating past all of that. And even during the session, knowing the phone was right there made it hard to fully disconnect.</p>
+          <p>So I built a dedicated device for it. MeditationPi is a small, purpose-built meditation device that does nothing else. You pick a session type, choose a duration, put on your headphones, and that's it. No notifications, no internet access. Just a quiet e-ink display and a guided session. I chose e-ink specifically because it's less distracting than a regular screen.</p>
+          <p>The hardware is a Raspberry Pi Zero 2 W with a Waveshare e-ink touchscreen and a battery pack, small enough to bring in your pocket. I designed and 3D printed a case to hold everything together. I wrote the interface in Python, keeping the UI minimal by design: dark background, bold type, two choices at a time. The constraint of a 2.13" e-ink screen turned out to be a feature.</p>
         </div>
 
       </div>
 
       <!-- 3. Hero video -->
       <div class="work__hero">
-        <video src="../images/color-picker-project-video.mp4" autoplay loop muted playsinline style="object-fit: contain;"></video>
+        <video src="../images/meditation-video.mp4" autoplay loop muted playsinline></video>
+      </div>
+
+      <!-- 4. Additional images -->
+      <div class="work__hero">
+        <img src="../images/meditation-project1.jpg" alt="MeditationPi detail">
+      </div>
+
+      <div class="work__hero">
+        <img src="../images/meditation-project2.jpg" alt="MeditationPi detail">
+      </div>
+
+      <div class="work__hero">
+        <img src="../images/meditation-project3.jpg" alt="MeditationPi detail">
+      </div>
+
+      <div class="work__hero">
+        <img src="../images/meditation-project4.jpg" alt="MeditationPi hardware">
       </div>
 
     </main>
