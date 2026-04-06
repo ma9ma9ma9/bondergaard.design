@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bondergaard.Design</title>
+  <link rel="icon" href="../favicon/favicon.ico" sizes="any">
+  <link rel="icon" href="../favicon/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../favicon/apple-touch-icon.png">
+  <link rel="manifest" href="../favicon/site.webmanifest">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="loaded">
+
+  <div id="main" class="main">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header__left">
+        <a href="../index.html" class="header__name">Bondergaard.Design</a>
+      </div>
+      <nav class="header__nav">
+        <a href="../index.html" class="nav-link nav-link--active">Work</a>
+        <a href="../about.html" class="nav-link">About</a>
+      </nav>
+    </header>
+
+    <!-- Project Detail -->
+    <main class="work">
+
+      <!-- 1. Header: PROJECT label + title left, nav right -->
+      <div class="work__header">
+        <div>
+          <h3 class="work__sidebar-label">Project</h3>
+          <h1 class="work__title">FLIX</h1>
+        </div>
+        <nav class="work__nav">
+          <a href="../index.html" class="work__nav-link work__nav-link--back">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            All
+          </a>
+          <a href="cykel-pi.html" class="work__nav-link work__nav-link--next">
+            Next
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </nav>
+      </div>
+
+      <!-- 2. Description + sidebar -->
+      <div class="work__intro">
+
+        <aside class="work__sidebar">
+          <div class="work__sidebar-group">
+            <h3 class="work__sidebar-label">Type</h3>
+            <p class="work__sidebar-value">Side Project</p>
+          </div>
+          <div class="work__sidebar-group">
+            <h3 class="work__sidebar-label">Year</h3>
+            <p class="work__sidebar-value">2026</p>
+          </div>
+          <div class="work__sidebar-group">
+            <h3 class="work__sidebar-label">Tags</h3>
+            <p class="work__sidebar-value">Hardware<br>IoT<br>UX Design<br>Raspberry Pi<br>Home Automation</p>
+          </div>
+        </aside>
+
+        <div class="work__description">
+          <h3 class="work__sidebar-label">Overview</h3>
+          <p>Kids today get handed a tablet and thrown into an endless scroll of YouTube recommendations, autoplay, and ads. I wanted something different for my son, something intentional, physical, and calm. Something that reminded me of the good old days of choosing a VHS (yes, I'm that old) from the shelf. So I built FLIX.</p>
+          <p>FLIX is a physical media player for kids. Each movie or show lives on an NFC card. When my son picks one from the card holder and places it on the FLIX platform, the TV turns on and the movie starts playing. No browsing, no suggestions, no algorithms, just the content I've chosen for him. When the movie ends, the TV turns off. That's it.</p>
+          <p>Under the platform, there's an NFC reader and ESP32 microcontroller inside a 3D printed case. The ESP32 reads the card and sends the tag ID over WiFi to a Raspberry Pi connected to the TV. The Pi pulls the stream from a Jellyfin media server and plays it fullscreen. HDMI-CEC handles turning the TV on and off automatically.</p>
+          <p>The whole thing is invisible. The platform sits on a table, the Pi hides behind the TV, and my son just sees cards of movies he can choose from.</p>
+        </div>
+
+      </div>
+
+      <!-- 3. Hero image -->
+      <div class="work__hero" style="margin-bottom: 24px; background: none;">
+        <img src="../images/flix-project1.jpg" alt="FLIX overview">
+      </div>
+
+      <!-- 4. Additional image -->
+      <div class="work__hero">
+        <img src="../images/flix-project2.jpg" alt="FLIX detail">
+      </div>
+
+    </main>
+
+
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

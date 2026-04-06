@@ -207,7 +207,7 @@ body.loaded .main {
 }
 
 .header__name {
-  font-size: clamp(13px, 2vw, 16px);
+  font-size: clamp(16px, 2.5vw, 20px);
   font-weight: 500;
   letter-spacing: 0.01em;
   transition: opacity 0.2s;
