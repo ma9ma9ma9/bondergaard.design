@@ -32,7 +32,7 @@
       <div class="work__header">
         <div>
           <h3 class="work__sidebar-label">Project</h3>
-          <h1 class="work__title">Color Picker</h1>
+          <h1 class="work__title">aiPort</h1>
         </div>
         <nav class="work__nav">
           <a href="/" class="work__nav-link work__nav-link--back">
@@ -41,7 +41,7 @@
             </svg>
             All
           </a>
-          <a href="/aiport" class="work__nav-link work__nav-link--next">
+          <a href="/meditation-pi" class="work__nav-link work__nav-link--next">
             Next
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -56,30 +56,30 @@
         <aside class="work__sidebar">
           <div class="work__sidebar-group">
             <h3 class="work__sidebar-label">Type</h3>
-            <p class="work__sidebar-value">Work Project</p>
+            <p class="work__sidebar-value">Side Project</p>
           </div>
           <div class="work__sidebar-group">
             <h3 class="work__sidebar-label">Year</h3>
-            <p class="work__sidebar-value">2025</p>
+            <p class="work__sidebar-value">2026</p>
           </div>
           <div class="work__sidebar-group">
             <h3 class="work__sidebar-label">Tags</h3>
-            <p class="work__sidebar-value">Web App<br>ESP32<br>Hardware Integration</p>
+            <p class="work__sidebar-value">AI<br>Voice Control<br>Raspberry Pi<br>PiSugar</p>
           </div>
         </aside>
 
         <div class="work__description">
           <h3 class="work__sidebar-label">Overview</h3>
-          <p>Choosing the right LED color for physical products is often difficult. You'd pick a color on screen, send it off to production, and it would look completely different on the actual product. So I built a tool that lets us see colors on our knob sample before committing.</p>
-          <p>It's a simple color picker that connects to an ESP32 microcontroller inside one of our knob samples. The ESP32 controls an LED strip, and when you pick a color on the web interface, it updates the physical knob instantly. You connect to the local WiFi network, open the webpage, and start testing. You can switch between HEX, RGB, HSV, or HSL values, adjust brightness, and see exactly how each color looks on the actual hardware.</p>
-          <p>The knob is taped up in the photos because it's not on the market yet.</p>
+          <p>aiPort is a portable, battery-powered voice assistant. You press a button, ask a question, and it answers out loud.</p>
+          <p>Hardware: a Raspberry Pi Zero 2 W (the brain), a PiSugar Whisplay HAT (screen, microphones, speaker, light, and button), and a PiSugar3 battery so it runs untethered.</p>
+          <p>How it works: you press the button and talk; the mics record your voice, it's converted to text in the cloud, AI (Claude) works out the reply, and the answer is turned back into speech and played through the speaker. A small screen and color light show what it's doing: blue when listening, amber when thinking, green when speaking.</p>
         </div>
 
       </div>
 
       <!-- 3. Hero video -->
       <div class="work__hero">
-        <video src="images/color-picker-project-video.mp4" autoplay loop muted playsinline class="contain"></video>
+        <video src="images/aiport-project-video1.mp4" autoplay loop muted playsinline class="contain"></video>
       </div>
 
     </main>
