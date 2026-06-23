@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bondergaard.Design</title>
+  <link rel="icon" href="favicon/favicon.ico" sizes="any">
+  <link rel="icon" href="favicon/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="loaded">
+
+  <div id="main" class="main">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header__left">
+        <a href="/" class="header__name">Bondergaard.Design</a>
+      </div>
+      <nav class="header__nav">
+        <a href="/" class="nav-link nav-link--active">Work</a>
+        <a href="/about" class="nav-link">About</a>
+      </nav>
+    </header>
+
+    <!-- Project Detail -->
+    <main class="work">
+
+      <!-- 1. Header: PROJECT label + title left, nav right -->
+      <div class="work__header">
+        <div>
+          <h3 class="work__sidebar-label">Project</h3>
+          <h1 class="work__title">Ekko</h1>
+        </div>
+        <nav class="work__nav">
+          <a href="/" class="work__nav-link work__nav-link--back">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            All
+          </a>
+          <a href="/ux-curator" class="work__nav-link work__nav-link--next">
+            Next
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </nav>
+      </div>
+
+      <!-- 2. Description + sidebar -->
+      <div class="work__intro">
+
+        <aside class="work__sidebar">
+          <div class="work__sidebar-group">
+            <h3 class="work__sidebar-label">Type</h3>
+            <p class="work__sidebar-value">Side Project</p>
+          </div>
+          <div class="work__sidebar-group">
+            <h3 class="work__sidebar-label">Year</h3>
+            <p class="work__sidebar-value">2026</p>
+          </div>
+          <div class="work__sidebar-group">
+            <h3 class="work__sidebar-label">Tags</h3>
+            <p class="work__sidebar-value">Hardware<br>IoT<br>UX Design<br>Raspberry Pi<br>3D Printing<br>NFC</p>
+          </div>
+        </aside>
+
+        <div class="work__description">
+          <h3 class="work__sidebar-label">Overview</h3>
+          <p>My son loves stories and songs, but I didn't love the idea of handing him a tablet to get them. I'd come across the Tonie boxes, those little speakers where a kid drops a figurine on top and audio starts playing. I thought it would just be a fun thing to build myself. So I did. I call it Ekko.</p>
+          <p>Ekko is a homemade audio player for kids. Each story, song, or character lives inside a small figure with an NFC tag hidden in it. When my son places a figure on top of the box, Ekko recognizes it and starts playing. Lift it off, and it stops. No menus, no screens, no scrolling.</p>
+          <p>I designed and modeled the entire enclosure in Fusion 360 and printed it on my 3D printer, iterating on the fit until every component sat exactly where it should. Inside, a Raspberry Pi runs the show alongside an NFC scanner that reads whichever figure is placed on top. To make setup painless, I built a local web app: I drop an NFC tag onto Ekko, it detects it instantly, and I link it to whatever audio I want it to play. Adding a new character takes seconds.</p>
+          <p>Then it became something I didn't plan for. Felix's grandparents live abroad, and Ekko quietly turned into a way for him to stay close to them. I built the Ekko app, where invited family and friends can record their own messages: a bedtime story, a song, a simple hello. Everyone gets their own figure, and when Felix places it on the box, their voice plays. Now he can hear his grandparents read to him and sing to him from the other side of the world.</p>
+          <p>That's the part I'm proudest of. It stopped being a gadget and became a way for my son to feel close to the people who love him.</p>
+        </div>
+
+      </div>
+
+      <!-- 3. Hero: clean product shot -->
+      <div class="work__hero work__hero--tight">
+        <img src="images/ekko-project1.png" alt="Ekko box" loading="lazy">
+      </div>
+
+      <!-- 4. Box with figurines -->
+      <div class="work__hero work__hero--tight">
+        <img src="images/ekko-project2.png" alt="Ekko with figurines" loading="lazy">
+      </div>
+
+      <!-- 5. Video -->
+      <div class="work__hero work__hero--tight">
+        <video src="images/ekko-project-video1.mp4" autoplay loop muted playsinline class="contain"></video>
+      </div>
+
+      <!-- 6. App screens -->
+      <div class="work__hero work__hero--clear">
+        <img src="images/ekko-project3.png" alt="Ekko app" loading="lazy">
+      </div>
+
+    </main>
+
+
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
