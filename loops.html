@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bondergaard.Design</title>
+  <link rel="icon" href="favicon/favicon.ico" sizes="any">
+  <link rel="icon" href="favicon/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="loaded">
+
+  <div id="main" class="main">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header__left">
+        <a href="/" class="header__name">Bondergaard.Design</a>
+      </div>
+      <nav class="header__nav">
+        <a href="/" class="nav-link nav-link--active">Work</a>
+        <a href="/about" class="nav-link">About</a>
+      </nav>
+    </header>
+
+    <!-- Project Detail -->
+    <main class="work">
+
+      <!-- 1. Header: PROJECT label + title left, nav right -->
+      <div class="work__header">
+        <div>
+          <h3 class="work__sidebar-label">Project</h3>
+          <h1 class="work__title">Loops</h1>
+        </div>
+        <nav class="work__nav">
+          <a href="/" class="work__nav-link work__nav-link--back">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            All
+          </a>
+          <a href="/ekko" class="work__nav-link work__nav-link--next">
+            Next
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </nav>
+      </div>
+
+      <!-- 2. Description + sidebar -->
+      <div class="work__intro">
+
+        <aside class="work__sidebar">
+          <div class="work__sidebar-group">
+            <h3 class="work__sidebar-label">Type</h3>
+            <p class="work__sidebar-value">Side Project</p>
+          </div>
+          <div class="work__sidebar-group">
+            <h3 class="work__sidebar-label">Year</h3>
+            <p class="work__sidebar-value">2026</p>
+          </div>
+          <div class="work__sidebar-group">
+            <h3 class="work__sidebar-label">Tags</h3>
+            <p class="work__sidebar-value">PWA<br>UX Design<br>Maps<br>Running<br>GPX</p>
+          </div>
+        </aside>
+
+        <div class="work__description">
+          <h3 class="work__sidebar-label">Overview</h3>
+          <p>Like most runners, I don't actually run new routes. I run the same handful of loops from my front door, over and over. But every training plan app assumes the opposite: it hands you distances and expects you to invent a route for each one. Loops flips that around. It plans your week from the routes you already run.</p>
+          <p>You import your regular routes as GPX files, tell Loops how many kilometers you want this week and how much climbing you're in the mood for, and it suggests combinations of your own loops that hit the target. Flat, rolling, and hilly aren't absolute categories — they're relative to your own library, so "hilly" means hilly for you.</p>
+          <p>The interaction design centers on a dark map of your city. Your week lives there as glowing route lines: red for runs still waiting, green for the ones you've done. Checking off a run is a single tap in the bottom sheet, and watching your map turn green over the week became the little reward that keeps the plan honest.</p>
+          <p>I designed it mobile-first as an installable PWA, since the only place a training plan matters is on your phone, right before you head out the door. History keeps score week by week — planned versus completed — with no streaks, no badges, and no guilt mechanics. Just a quiet record of what you set out to do and what you did.</p>
+        </div>
+
+      </div>
+
+      <!-- 3. Hero: three app screens -->
+      <div class="work__hero work__hero--tight">
+        <img src="images/loops-project1.png" alt="Loops app screens: week suggestions, dark map with route status, and route library" loading="lazy">
+      </div>
+
+    </main>
+
+
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

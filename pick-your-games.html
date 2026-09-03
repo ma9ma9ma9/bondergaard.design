@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bondergaard.Design</title>
+  <link rel="icon" href="favicon/favicon.ico" sizes="any">
+  <link rel="icon" href="favicon/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="loaded">
+
+  <div id="main" class="main">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header__left">
+        <a href="/" class="header__name">Bondergaard.Design</a>
+      </div>
+      <nav class="header__nav">
+        <a href="/" class="nav-link nav-link--active">Work</a>
+        <a href="/about" class="nav-link">About</a>
+      </nav>
+    </header>
+
+    <!-- Project Detail -->
+    <main class="work">
+
+      <!-- 1. Header: PROJECT label + title left, nav right -->
+      <div class="work__header">
+        <div>
+          <h3 class="work__sidebar-label">Project</h3>
+          <h1 class="work__title">Pick Your Games</h1>
+        </div>
+        <nav class="work__nav">
+          <a href="/" class="work__nav-link work__nav-link--back">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            All
+          </a>
+          <a href="/loops" class="work__nav-link work__nav-link--next">
+            Next
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </nav>
+      </div>
+
+      <!-- 2. Description + sidebar -->
+      <div class="work__intro">
+
+        <aside class="work__sidebar">
+          <div class="work__sidebar-group">
+            <h3 class="work__sidebar-label">Type</h3>
+            <p class="work__sidebar-value">Side Project</p>
+          </div>
+          <div class="work__sidebar-group">
+            <h3 class="work__sidebar-label">Year</h3>
+            <p class="work__sidebar-value">2026</p>
+          </div>
+          <div class="work__sidebar-group">
+            <h3 class="work__sidebar-label">Tags</h3>
+            <p class="work__sidebar-value">Web App<br>UX Design<br>Full-Stack<br>Self-Hosted<br>NFL</p>
+          </div>
+        </aside>
+
+        <div class="work__description">
+          <h3 class="work__sidebar-label">Overview</h3>
+          <p>I built Pick Your Games, an NFL confidence pool that runs at <a href="https://pickyour.games" target="_blank" rel="noopener" style="text-decoration: underline; text-underline-offset: 3px;">pickyour.games</a>, where real players are picking against each other every week of the season.</p>
+          <p>The idea is simple: each week you pick a winner for every NFL game, then drag your picks into confidence order. Your surest pick sits at the top and is worth 100 points; the ladder descends from there. Correct picks score, and every week you face one other player head-to-head. Win your matchup and you climb the league table toward the playoffs at the end of the season.</p>
+          <p>Most of the interaction design went into making picking feel physical. The board is a drag-to-rank list where each game locks into place at kickoff, wherever you left it. Matchup cards show a live tug-of-war bar with your actual win probability, computed by enumerating every possible outcome of the remaining games rather than estimating. Tap a card and it unfolds into a full ledger comparing both boards game by game, with your opponent's picks hidden face-down until each game kicks off. All of it was prototyped in the working app and refined with the people actually playing it, including a long stretch of invisible work keeping drag-and-drop trustworthy on iOS.</p>
+          <p>I designed the whole visual system for it: a navy and orange palette borrowed from stadium lights, condensed athletic type, and a folder-tab header where the active tab is cut from the surface beneath it. Small rules keep the game fair without anyone noticing, like an invisible auto-pick that quietly gives absent players the betting favorite so nobody forfeits a week.</p>
+          <p>Under the hood it's a Next.js app with a SQLite database, pulling live scores from ESPN, self-hosted on a Raspberry Pi in my house behind a Cloudflare tunnel. The best part is that it's not a demo. Friends and family have their teams registered, and the season opens with all of us watching the same scoreboard.</p>
+        </div>
+
+      </div>
+
+      <!-- 3. Hero: three app screens -->
+      <div class="work__hero work__hero--tight">
+        <img src="images/pick-your-games-project1.png" alt="Pick Your Games app screens: picks board, matchups, and league table" loading="lazy">
+      </div>
+
+      <!-- 4. Matchup ledger + login -->
+      <div class="work__hero work__hero--tight">
+        <img src="images/pick-your-games-project2.png" alt="Expanded matchup ledger and login screen" loading="lazy">
+      </div>
+
+    </main>
+
+
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
