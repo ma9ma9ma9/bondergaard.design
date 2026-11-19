@@ -1,0 +1,188 @@
+/* ============================================================
+   COPY — ROBOT TASK DELEGATION – project page only
+   Photo gallery, captions and screen-detail viewer, scoped to
+   .cp-* so the rest of the site is untouched.
+   ============================================================ */
+
+.cp-gallery,
+.cp-dialog,
+.cp-overview {
+  --cp-muted: rgba(245, 245, 245, 0.7);
+  --cp-focus: #99cfff;
+}
+
+/* Source link in the overview */
+.cp-overview p a {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-color: rgba(245, 245, 245, 0.5);
+  transition: text-decoration-color 0.2s;
+}
+
+.cp-overview p a:hover { text-decoration-color: var(--white); }
+
+.cp-overview p a:focus-visible {
+  outline: 2px solid var(--cp-focus);
+  outline-offset: 3px;
+}
+
+/* --- Gallery ----------------------------------------------- */
+
+.cp-gallery {
+  display: grid;
+  gap: clamp(38px, 5.7vw, 78px);
+  margin-bottom: 96px;
+}
+
+.cp-figure { margin: 0; min-width: 0; }
+
+.cp-shot {
+  display: block;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--grey-subtle);
+  cursor: zoom-in;
+}
+
+.cp-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.cp-shot:focus-visible {
+  outline: 2px solid var(--cp-focus);
+  outline-offset: 3px;
+}
+
+.cp-expand {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  color: var(--white);
+  background: rgba(10, 10, 10, 0.68);
+  border: 1px solid rgba(245, 245, 245, 0.45);
+  border-radius: 50%;
+}
+
+.cp-expand svg { width: 15px; height: 15px; }
+
+@media (hover: hover) {
+  .cp-expand { opacity: 0.72; transition: opacity 0.18s; }
+  .cp-shot:hover .cp-expand,
+  .cp-shot:focus-visible .cp-expand { opacity: 1; }
+}
+
+/* Heading on the left, description on the right */
+.cp-caption {
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) minmax(0, 1.65fr);
+  gap: 0 24px;
+  padding: 18px 0 22px;
+  border-bottom: 1px solid var(--grey-line);
+}
+
+.cp-figure:last-child .cp-caption { border-bottom: 0; }
+
+.cp-caption h2 {
+  margin: 0 0 8px;
+  font-size: clamp(21px, 1.96vw, 27px);
+  font-weight: 400;
+  line-height: 1.16;
+  letter-spacing: -0.02em;
+  color: var(--white);
+}
+
+.cp-caption p {
+  max-width: 60ch;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--cp-muted);
+}
+
+/* --- Screen-detail viewer ---------------------------------- */
+
+.cp-dialog {
+  width: min(440px, calc(100vw - 28px));
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 12px;
+  color: var(--white);
+  background: var(--black);
+  border: 1px solid var(--grey-line);
+}
+
+.cp-dialog::backdrop { background: rgba(10, 10, 10, 0.88); }
+
+.cp-dialog-header,
+.cp-dialog-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.cp-dialog-header h2 {
+  font-size: 15px;
+  font-weight: 400;
+  padding-left: 4px;
+}
+
+.cp-dialog button {
+  min-height: 42px;
+  padding: 8px 14px;
+  font-size: 14px;
+  color: var(--white);
+  border: 1px solid var(--grey-line);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.cp-dialog button:hover:not(:disabled) {
+  border-color: var(--white);
+  background: var(--grey-subtle);
+}
+
+.cp-dialog button:focus-visible {
+  outline: 2px solid var(--cp-focus);
+  outline-offset: 3px;
+}
+
+.cp-dialog button:disabled { opacity: 0.35; cursor: default; }
+
+/* The screen artwork keeps its 360 × 740 proportions. */
+.cp-dialog-art {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: min(67dvh, 690px);
+  aspect-ratio: 360 / 740;
+  object-fit: contain;
+  margin: 12px auto;
+  border-radius: 12px;
+}
+
+.cp-dialog-counter {
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.06em;
+  color: var(--cp-muted);
+}
+
+/* --- Responsive -------------------------------------------- */
+
+@media (max-width: 750px) {
+  .cp-caption { grid-template-columns: 1fr 1.45fr; }
+}
+
+/* Phones use the portrait crops (see the <picture> sources) and
+   stack each heading above its description. */
+@media (max-width: 620px) {
+  .cp-gallery { gap: 34px; }
+  .cp-caption { grid-template-columns: 1fr; padding: 14px 0 18px; }
+  .cp-expand { right: 10px; bottom: 10px; }
+}

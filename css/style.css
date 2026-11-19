@@ -13,7 +13,7 @@
 :root {
   --black: #0a0a0a;
   --white: #f5f5f5;
-  --grey-dim: rgba(245, 245, 245, 0.35);
+  --grey-dim: rgba(245, 245, 245, 0.55);
   --grey-subtle: rgba(245, 245, 245, 0.08);
   --grey-line: rgba(245, 245, 245, 0.12);
 
@@ -400,7 +400,7 @@ body.loaded .main {
 .projects[data-view="grid"] {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
+  gap: 40px 2px; /* rows: room so each description reads with the image above */
 }
 
 /* List layout */
@@ -643,8 +643,8 @@ body.loaded .main {
 }
 
 .work__description p {
-  font-size: 16px;
-  line-height: 1.8;
+  font-size: 18px;
+  line-height: 1.7;
   color: var(--white);
 }
 
@@ -699,6 +699,36 @@ body.loaded .main {
 
 .work__hero-grid .work__hero {
   margin-bottom: 0;
+}
+
+/* Square tiles: each image or video is cropped to fill its square */
+.work__hero-grid--squares {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.work__hero-grid--squares .work__hero {
+  aspect-ratio: 1 / 1;
+}
+
+.work__hero-grid--squares .work__hero img,
+.work__hero-grid--squares .work__hero video {
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Tight variant: matches the 24px spacing of .work__hero--tight */
+.work__hero-grid--tight {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 600px) {
+  .work__hero-grid--squares,
+  .work__hero-grid--tight {
+    gap: 8px;
+  }
 }
 
 /* Sidebar */
@@ -787,10 +817,30 @@ body.loaded .main {
   transform: translateX(4px);
 }
 
+/* Phones: tighter All / Next spacing so every title fits beside them
+   and the links sit in the same place on every project page. */
+@media (max-width: 600px) {
+  .work__nav {
+    gap: 24px;
+    padding-left: 16px;
+  }
+}
+
+@media (max-width: 340px) {
+  .work__title {
+    font-size: 24px;
+  }
+}
+
 /* Responsive */
 @media (max-width: 720px) {
   .work__intro {
     grid-template-columns: 1fr;
+  }
+
+  .work__description p {
+    font-size: 16px;
+    line-height: 1.8;
   }
 
   .work__sidebar {
@@ -1063,7 +1113,7 @@ body.loaded .main {
   .projects[data-view="grid"] {
     grid-template-columns: 1fr;
     padding: 24px;
-    gap: 2px;
+    gap: 32px;
   }
 
   .projects[data-view="list"] .project-card__link {

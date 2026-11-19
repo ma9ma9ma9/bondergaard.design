@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bondergaard.Design</title>
+  <meta name="description" content="Exploring how light and animation help robots communicate from a distance. Try the interactive configurator and see the signals on a working LED prototype.">
+  <link rel="icon" href="favicon/favicon.ico" sizes="any">
+  <link rel="icon" href="favicon/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/robot-light.css">
+</head>
+<body class="loaded">
+
+  <div id="main" class="main">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header__left">
+        <a href="/" class="header__name">Bondergaard.Design</a>
+      </div>
+      <nav class="header__nav">
+        <a href="/" class="nav-link nav-link--active">Work</a>
+        <a href="/about" class="nav-link">About</a>
+      </nav>
+    </header>
+
+    <!-- Project Detail -->
+    <main class="work">
+
+      <!-- 1. Header: PROJECT label + title left, nav right -->
+      <div class="work__header">
+        <div>
+          <h3 class="work__sidebar-label">Project</h3>
+          <h1 class="work__title">Light as Feedback in Robotics</h1>
+        </div>
+        <nav class="work__nav">
+          <a href="/" class="work__nav-link work__nav-link--back">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            All
+          </a>
+          <a href="/ux-curator" class="work__nav-link work__nav-link--next">
+            Next
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </nav>
+      </div>
+
+      <!-- 2. Description + sidebar -->
+      <div class="work__intro">
+
+        <aside class="work__sidebar">
+          <div class="work__sidebar-group">
+            <h3 class="work__sidebar-label">Type</h3>
+            <p class="work__sidebar-value">Side Project</p>
+          </div>
+          <div class="work__sidebar-group">
+            <h3 class="work__sidebar-label">Year</h3>
+            <p class="work__sidebar-value">2026</p>
+          </div>
+          <div class="work__sidebar-group">
+            <h3 class="work__sidebar-label">Tags</h3>
+            <p class="work__sidebar-value">Robotics<br>Interaction Design<br>Prototyping</p>
+          </div>
+        </aside>
+
+        <div class="work__description">
+          <h3 class="work__sidebar-label">Overview</h3>
+          <p>When an autonomous robot pauses, the person managing it needs to know whether to wait or step in. Can light and animation make that clear from a distance?</p>
+          <p>In my work on Bosch and Thermador appliances, I design light and motion patterns that communicate product states. I applied that approach to a robot concept, using two light strips to communicate its status and where attention is needed.</p>
+          <p>This study uses a robotic plow as an example. A slow green sweep means it will resume on its own. Two short red pulses on both sides ask for help. If an attachment latch is loose, only the light on that side pulses to show where to check.</p>
+          <p>I built the light configurator to customize and iterate on these signals. Try the controls below to adjust timing, brightness, and color, and see each change on the robot.</p>
+        </div>
+
+      </div>
+
+      <!-- 3. Interactive light configurator -->
+      <figure class="rl-study" data-pattern="sweep">
+        <div class="rl-scene" role="img" aria-label="A stopped plow with two front lights, seen from a doorway across a snowy lot." aria-describedby="rl-behavior-description">
+          <div class="rl-world" aria-hidden="true">
+            <img src="images/robot-light-scene.jpg" alt="" width="1774" height="887" fetchpriority="high">
+            <div class="rl-lamp">
+              <!-- Front view: vehicle right appears on the viewer's left. -->
+              <span class="rl-strip rl-vehicle-right"><span class="rl-beam"></span></span>
+              <span class="rl-strip rl-vehicle-left"><span class="rl-beam"></span></span>
+            </div>
+          </div>
+        </div>
+        <figcaption>
+          <div class="rl-controls">
+            <fieldset class="rl-patterns">
+              <legend class="rl-sr-only">Light behavior</legend>
+              <span class="rl-control-label" aria-hidden="true">Light behavior</span>
+              <div class="rl-choices">
+                <label class="rl-choice">
+                  <input type="radio" name="rl-signal" value="sweep" checked>
+                  <span>
+                    <i class="rl-sweep-mark" aria-hidden="true"></i>
+                    <span>I’ll resume on my own<small>Slow sweep</small></span>
+                  </span>
+                </label>
+                <label class="rl-choice">
+                  <input type="radio" name="rl-signal" value="pulse">
+                  <span>
+                    <i class="rl-pulse-mark" aria-hidden="true"></i>
+                    <span>I need your help<small>Two short pulses</small></span>
+                  </span>
+                </label>
+                <label class="rl-choice">
+                  <input type="radio" name="rl-signal" value="attachment">
+                  <span>
+                    <i class="rl-latch-mark" aria-hidden="true"></i>
+                    <span>Attachment check<small>Plow’s right latch</small></span>
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+            <button class="rl-playback" type="button">
+              <i class="rl-playback-mark" aria-hidden="true"></i><span>Pause motion</span>
+            </button>
+          </div>
+          <div class="rl-behavior-note">
+            <p role="status" id="rl-behavior-description">The plow has made a planned stop. The slow sweep means it will resume on its own.</p>
+            <button type="button" id="rl-seat-latch" data-scenario="attachment" hidden>Seat plow’s right latch</button>
+          </div>
+          <section class="rl-tune-panel" aria-labelledby="rl-tune-title">
+            <h2 id="rl-tune-title">Tune the lights</h2>
+            <div class="rl-tuning">
+              <fieldset class="rl-sliders">
+                <legend class="rl-sr-only" id="rl-tuning-label">Slow sweep settings</legend>
+                <div class="rl-fields"></div>
+              </fieldset>
+              <div class="rl-color-setting" data-scenario="stopped">
+                <label for="rl-light-color">Light color</label>
+                <div class="rl-color-value">
+                  <input id="rl-light-color" type="color" value="#1eff00" aria-describedby="rl-color-code">
+                  <span id="rl-color-code">#1EFF00</span>
+                </div>
+              </div>
+              <button class="rl-reset" type="button">Reset pattern</button>
+            </div>
+          </section>
+        </figcaption>
+      </figure>
+
+      <!-- 4. Physical prototype -->
+      <section class="rl-prototype" aria-labelledby="rl-prototype-title">
+        <div class="rl-prototype-intro">
+          <h2 id="rl-prototype-title">From screen to physical light</h2>
+          <p>I programmed an Arduino to receive and play the light patterns over USB, then mounted the LED strip in a 3D-printed enclosure. This lets me compare the browser preview with physical light and refine the signals on working hardware.</p>
+        </div>
+        <figure class="rl-prototype-media">
+          <div class="rl-prototype-row">
+            <div class="rl-prototype-frame">
+              <video src="images/robot-light-prototype-video.mp4" autoplay loop muted playsinline width="720" height="1280" poster="images/robot-light-prototype-poster.jpg" aria-label="Demonstration of all three light behaviors on the physical LED prototype" aria-describedby="rl-prototype-caption"></video>
+            </div>
+            <div class="rl-prototype-frame">
+              <img src="images/robot-light-prototype-photo.jpg" alt="Laptop running the light configurator, connected to an Arduino Uno that drives the LED strip in a 3D-printed enclosure." width="1200" height="1600" loading="lazy">
+            </div>
+          </div>
+          <figcaption id="rl-prototype-caption">Switching between “I’ll resume on my own,” “I need your help,” and “Attachment check” on the physical LED prototype.</figcaption>
+        </figure>
+      </section>
+
+    </main>
+
+
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/robot-light.js" defer></script>
+</body>
+</html>

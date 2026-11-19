@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bondergaard.Design</title>
+  <meta name="description" content="A voice interface for delegating deliveries to a shared robotic cart, checking its understanding, and following progress through to completion.">
+  <link rel="icon" href="favicon/favicon.ico" sizes="any">
+  <link rel="icon" href="favicon/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/copy.css">
+</head>
+<body class="loaded">
+
+  <div id="main" class="main">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header__left">
+        <a href="/" class="header__name">Bondergaard.Design</a>
+      </div>
+      <nav class="header__nav">
+        <a href="/" class="nav-link nav-link--active">Work</a>
+        <a href="/about" class="nav-link">About</a>
+      </nav>
+    </header>
+
+    <!-- Project Detail -->
+    <main class="work">
+
+      <!-- 1. Header: PROJECT label + title left, nav right -->
+      <div class="work__header">
+        <div>
+          <h3 class="work__sidebar-label">Project</h3>
+          <h1 class="work__title">Copy: Robot Task Delegation</h1>
+        </div>
+        <nav class="work__nav">
+          <a href="/" class="work__nav-link work__nav-link--back">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            All
+          </a>
+          <a href="/ekko" class="work__nav-link work__nav-link--next">
+            Next
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </nav>
+      </div>
+
+      <!-- 2. Description + sidebar -->
+      <div class="work__intro">
+
+        <aside class="work__sidebar">
+          <div class="work__sidebar-group">
+            <h3 class="work__sidebar-label">Type</h3>
+            <p class="work__sidebar-value">Side Project</p>
+          </div>
+          <div class="work__sidebar-group">
+            <h3 class="work__sidebar-label">Year</h3>
+            <p class="work__sidebar-value">2026</p>
+          </div>
+          <div class="work__sidebar-group">
+            <h3 class="work__sidebar-label">Tags</h3>
+            <p class="work__sidebar-value">Robotics<br>Interaction Design<br>Voice UI</p>
+          </div>
+        </aside>
+
+        <div class="work__description cp-overview">
+          <h3 class="work__sidebar-label">Overview</h3>
+          <p>In a <a href="https://www.youtube.com/watch?v=dG3-CIsoaG0&amp;t=184s" aria-label="FieldAI interview, starting at 3 minutes 4 seconds">FieldAI interview</a>, a construction crew member said he’d heard that moving materials takes up 15–20% of the hours on a typical job. He imagined asking a cart to take his gear up a floor. How do you hand a robot a job and know it understood, is making progress, and has finished?</p>
+          <p>I designed Copy as a push-to-talk interface for a shared robotic cart. A worker gives the cart a job by voice, checks the pickup and drop-off it heard, and gets back to work. Their phone shows which cart is coming, where it’s headed, and when to expect it. When a route is blocked, the cart finds another way and sends the worker a revised delivery time.</p>
+        </div>
+
+      </div>
+
+      <!-- 3. Five photos with captions; each opens its screen detail -->
+      <div class="cp-gallery">
+
+        <figure class="cp-figure">
+          <button type="button" class="cp-shot" aria-label="View the hold to talk screen" aria-haspopup="dialog" data-label="Hold to talk" data-screen="images/copy-01-listening-screen.svg" data-description="Listening… Live transcript: “Pick up at Bay B and take it to Level 2 staging.” Release the side key to review your request.">
+            <picture>
+              <source media="(max-width: 620px)" srcset="images/copy-01-listening-portrait.webp" width="720" height="1024">
+              <img src="images/copy-01-listening.webp" width="1536" height="1024" fetchpriority="high" alt="The phone rests on pale gray concrete. Its live transcript highlights Bay B and Level 2 staging above a small waveform.">
+            </picture>
+            <span class="cp-expand" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V4h4m8 8v4h-4M4.5 4.5 8 8m7.5 7.5L12 12"/></svg></span>
+          </button>
+          <figcaption class="cp-caption">
+            <h2>Hold to talk</h2>
+            <p>The worker holds the side key and says, “Pick up at Bay B and take it to Level 2 staging.” The words appear as they speak, with Bay B and Level 2 staging in bold so they can check both places at a glance.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="cp-figure">
+          <button type="button" class="cp-shot" aria-label="View the check what the cart heard screen" aria-haspopup="dialog" data-label="Check what the cart heard" data-screen="images/copy-02-confirm-screen.svg" data-description="Check the task. Pickup at Bay B. Deliver to Level 2 staging. Confirm task or hold the side key to correct.">
+            <picture>
+              <source media="(max-width: 620px)" srcset="images/copy-02-confirm-portrait.webp" width="720" height="1024">
+              <img src="images/copy-02-confirm.webp" width="1536" height="1024" loading="lazy" alt="The phone summarizes the task with pickup at Bay B, delivery to Level 2 staging, and a “Confirm task” button.">
+            </picture>
+            <span class="cp-expand" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V4h4m8 8v4h-4M4.5 4.5 8 8m7.5 7.5L12 12"/></svg></span>
+          </button>
+          <figcaption class="cp-caption">
+            <h2>Check what the cart heard</h2>
+            <p>Before a cart sets off, the phone shows the pickup and drop-off it heard. If the floor is wrong, the worker holds the same key to correct it. If both places are right, they confirm the task.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="cp-figure">
+          <button type="button" class="cp-shot" aria-label="View the follow the pickup screen" aria-haspopup="dialog" data-label="Follow the pickup" data-screen="images/copy-03-assigned-screen.svg" data-description="Cart 03 is coming to Bay B. Estimated pickup in three to five minutes. Destination is Level 2 staging.">
+            <picture>
+              <source media="(max-width: 620px)" srcset="images/copy-03-assigned-portrait.webp" width="720" height="1024">
+              <img src="images/copy-03-assigned.webp" width="1536" height="1024" loading="lazy" alt="The phone on pale gray concrete shows Cart 03 coming to Bay B in three to five minutes.">
+            </picture>
+            <span class="cp-expand" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V4h4m8 8v4h-4M4.5 4.5 8 8m7.5 7.5L12 12"/></svg></span>
+          </button>
+          <figcaption class="cp-caption">
+            <h2>Follow the pickup</h2>
+            <p>Cart 03 is on its way to Bay B for pickup in three to five minutes. When the cart arrives, a worker loads it at Bay B for delivery to Level 2 staging.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="cp-figure">
+          <button type="button" class="cp-shot" aria-label="View the a new delivery time screen" aria-haspopup="dialog" data-label="A new delivery time" data-screen="images/copy-04-blocked-screen.svg" data-description="New route found. Delivering to Level 2 staging. Updated delivery time 10:48 AM, previously 10:45 AM. The 10:41 AM notification said the route was blocked. Finding a new route and updating your delivery time.">
+            <picture>
+              <source media="(max-width: 620px)" srcset="images/copy-04-blocked-portrait.webp" width="720" height="1024">
+              <img src="images/copy-04-blocked.webp" width="1536" height="1024" loading="lazy" alt="The phone shows Cart 03 on a new route to Level 2 staging, with an updated delivery time of 10:48 AM and the earlier route-blocked notification below.">
+            </picture>
+            <span class="cp-expand" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V4h4m8 8v4h-4M4.5 4.5 8 8m7.5 7.5L12 12"/></svg></span>
+          </button>
+          <figcaption class="cp-caption">
+            <h2>A new delivery time</h2>
+            <p>A notification lets the worker know the route is blocked and Cart 03 is finding another way. Once it has a new route to Level 2 staging, the delivery estimate updates from 10:45 to 10:48 AM.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="cp-figure">
+          <button type="button" class="cp-shot" aria-label="View the delivery confirmed screen" aria-haspopup="dialog" data-label="Delivery confirmed" data-screen="images/copy-05-delivered-screen.svg" data-description="Cart 03. Task complete. Delivered to Level 2 staging at 10:48 AM. Create new task.">
+            <picture>
+              <source media="(max-width: 620px)" srcset="images/copy-05-delivered-portrait.webp" width="720" height="1024">
+              <img src="images/copy-05-delivered.webp" width="1536" height="1024" loading="lazy" alt="A green check accompanies the delivery confirmation for Level 2 staging at 10:48 AM. A button reads “Create new task.”">
+            </picture>
+            <span class="cp-expand" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V4h4m8 8v4h-4M4.5 4.5 8 8m7.5 7.5L12 12"/></svg></span>
+          </button>
+          <figcaption class="cp-caption">
+            <h2>Delivery confirmed</h2>
+            <p>At 10:48 AM, someone receives the load at Level 2 staging and Copy confirms the delivery. The worker can see where and when it arrived, then select “Create new task” when they have another job.</p>
+          </figcaption>
+        </figure>
+
+      </div>
+
+    </main>
+
+
+  </div>
+
+  <!-- Screen detail viewer -->
+  <dialog class="cp-dialog" aria-labelledby="cp-screen-title">
+    <div class="cp-dialog-header">
+      <h2 id="cp-screen-title">Interface detail</h2>
+      <button type="button" data-close autofocus>Close</button>
+    </div>
+    <img class="cp-dialog-art" src="images/copy-01-listening-screen.svg" alt="" width="360" height="740">
+    <div class="cp-dialog-nav">
+      <button type="button" data-prev>Previous</button>
+      <span class="cp-dialog-counter" aria-live="polite"></span>
+      <button type="button" data-next>Next</button>
+    </div>
+  </dialog>
+
+  <script src="js/main.js"></script>
+  <script src="js/copy.js" defer></script>
+</body>
+</html>
