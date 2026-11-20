@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bondergaard.Design</title>
+  <meta name="description" content="A working appliance knob prototype exploring how tactile feedback can adapt to temperature, timer, and other interface settings.">
+  <link rel="icon" href="favicon/favicon.ico" sizes="any">
+  <link rel="icon" href="favicon/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/appliance.css">
+</head>
+<body class="loaded">
+
+  <div id="main" class="main">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header__left">
+        <a href="/" class="header__name">Bondergaard.Design</a>
+      </div>
+      <nav class="header__nav">
+        <a href="/" class="nav-link nav-link--active">Work</a>
+        <a href="/about" class="nav-link">About</a>
+      </nav>
+    </header>
+
+    <!-- Project Detail -->
+    <main class="work">
+
+      <!-- 1. Header: PROJECT label + title left, nav right -->
+      <div class="work__header">
+        <div>
+          <h3 class="work__sidebar-label">Project</h3>
+          <h1 class="work__title">Context-Based Haptics</h1>
+        </div>
+        <nav class="work__nav">
+          <a href="/" class="work__nav-link work__nav-link--back">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            All
+          </a>
+          <a href="/copy" class="work__nav-link work__nav-link--next">
+            Next
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </nav>
+      </div>
+
+      <!-- 2. Description + sidebar -->
+      <div class="work__intro">
+
+        <aside class="work__sidebar">
+          <div class="work__sidebar-group">
+            <h3 class="work__sidebar-label">Type</h3>
+            <p class="work__sidebar-value">Work Exploration</p>
+          </div>
+          <div class="work__sidebar-group">
+            <h3 class="work__sidebar-label">Company</h3>
+            <p class="work__sidebar-value">Bosch / Thermador</p>
+          </div>
+          <div class="work__sidebar-group">
+            <h3 class="work__sidebar-label">Year</h3>
+            <p class="work__sidebar-value">2026</p>
+          </div>
+          <div class="work__sidebar-group">
+            <h3 class="work__sidebar-label">Tags</h3>
+            <p class="work__sidebar-value">Interaction Design<br>Haptics<br>Hardware Prototyping</p>
+          </div>
+        </aside>
+
+        <div class="work__description">
+          <h3 class="work__sidebar-label">Overview</h3>
+          <p>A kitchen knob might control temperature in one moment and a timer in the next. Should it feel the same for both?</p>
+          <p>At Bosch and Thermador, I built a haptic knob prototype to explore how tactile feedback can change with the interface. I call this context-based haptics: the knob adapts its feel to the setting the user is adjusting. The idea is to use the same physical control across different appliances, while giving each interaction the feedback it needs.</p>
+        </div>
+
+      </div>
+
+      <!-- 3. Demonstration video -->
+      <figure class="ap-film">
+        <video src="images/context-based-haptics-video.mp4" autoplay loop muted playsinline poster="images/context-based-haptics-poster.jpg" width="1920" height="1080" aria-label="Demonstration of a physical haptic knob connected to an appliance interface on a laptop" aria-describedby="ap-video-caption"></video>
+        <figcaption id="ap-video-caption">Using the physical knob with an appliance interface to explore different tactile responses.</figcaption>
+      </figure>
+
+      <!-- 4. Story -->
+      <section class="ap-story">
+        <h2>A boundary you can feel</h2>
+        <div>
+            <p>For a temperature setting, the knob can create a stop at the end of the available range. The resistance gives the user a physical indication that they have reached the limit.</p>
+        </div>
+      </section>
+
+      <section class="ap-story">
+        <h2>Different steps for different values</h2>
+        <div>
+            <p>For a timer, stronger detents could mark the hours, while smaller detents mark the minutes. The aim is to make the difference between larger and smaller adjustments something the user can feel.</p>
+        </div>
+      </section>
+
+      <section class="ap-story">
+        <h2>Building the feel</h2>
+        <div>
+            <p>I built the prototype with an encoder and a small gimbal motor. The encoder tracks the knob’s rotation, and the motor provides the resistance and detents. This gives me a working control for exploring how the feedback feels alongside the interface.</p>
+            <p class="ap-credit">The prototype was inspired by <a href="https://github.com/scottbez1/smartknob">Scott Bezek’s SmartKnob project</a>.</p>
+        </div>
+      </section>
+
+    </main>
+
+
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

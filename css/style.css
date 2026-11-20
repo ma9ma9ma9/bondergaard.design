@@ -443,6 +443,17 @@ body.loaded .main {
   filter: brightness(1);
 }
 
+/* Contain variant: shows the whole image (e.g. a wide screenshot) on
+   black inside the 4:3 frame. It keeps the usual hover zoom. */
+.projects[data-view="grid"] .project-card__image--contain {
+  background: var(--black);
+}
+
+.projects[data-view="grid"] .project-card__image--contain img {
+  object-fit: contain;
+  object-position: center;
+}
+
 .projects[data-view="grid"] .project-card__overlay {
   position: absolute;
   inset: 0;

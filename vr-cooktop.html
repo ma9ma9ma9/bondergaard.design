@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bondergaard.Design</title>
+  <meta name="description" content="An interactive VR prototype exploring the connection between physical knobs and movable cookware on a freedom induction cooktop.">
+  <link rel="icon" href="favicon/favicon.ico" sizes="any">
+  <link rel="icon" href="favicon/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/appliance.css">
+</head>
+<body class="loaded">
+
+  <div id="main" class="main">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header__left">
+        <a href="/" class="header__name">Bondergaard.Design</a>
+      </div>
+      <nav class="header__nav">
+        <a href="/" class="nav-link nav-link--active">Work</a>
+        <a href="/about" class="nav-link">About</a>
+      </nav>
+    </header>
+
+    <!-- Project Detail -->
+    <main class="work">
+
+      <!-- 1. Header: PROJECT label + title left, nav right -->
+      <div class="work__header">
+        <div>
+          <h3 class="work__sidebar-label">Project</h3>
+          <h1 class="work__title">Appliance Interactions in VR</h1>
+        </div>
+        <nav class="work__nav">
+          <a href="/" class="work__nav-link work__nav-link--back">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            All
+          </a>
+          <a href="/context-based-haptics" class="work__nav-link work__nav-link--next">
+            Next
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </nav>
+      </div>
+
+      <!-- 2. Description + sidebar -->
+      <div class="work__intro">
+
+        <aside class="work__sidebar">
+          <div class="work__sidebar-group">
+            <h3 class="work__sidebar-label">Type</h3>
+            <p class="work__sidebar-value">Work Exploration</p>
+          </div>
+          <div class="work__sidebar-group">
+            <h3 class="work__sidebar-label">Company</h3>
+            <p class="work__sidebar-value">Bosch / Thermador</p>
+          </div>
+          <div class="work__sidebar-group">
+            <h3 class="work__sidebar-label">Year</h3>
+            <p class="work__sidebar-value">2026</p>
+          </div>
+          <div class="work__sidebar-group">
+            <h3 class="work__sidebar-label">Tags</h3>
+            <p class="work__sidebar-value">Interaction Design<br>VR<br>Prototyping</p>
+          </div>
+        </aside>
+
+        <div class="work__description">
+          <h3 class="work__sidebar-label">Overview</h3>
+          <p>On a traditional cooktop, each knob controls a fixed burner. You know which knob belongs to which cooking zone. But when pots can move freely across an induction surface, how do you know which knob controls which pot?</p>
+          <p>At Bosch and Thermador, I have been exploring how to rebuild that connection. I compared different ways of assigning cookware to knobs in desktop prototypes, then brought the preferred interaction into VR on a Meta Quest 3. This let me place cookware, turn the controls, and follow the feedback while standing in front of a full-scale appliance model.</p>
+        </div>
+
+      </div>
+
+      <!-- 3. Demonstration video -->
+      <figure class="ap-film">
+        <video src="images/vr-cooktop-video.mp4" autoplay loop muted playsinline poster="images/vr-cooktop-poster.jpg" width="1920" height="1080" aria-label="VR demonstration of placing cookware on an induction cooktop and operating its front controls" aria-describedby="ap-video-caption"></video>
+        <figcaption id="ap-video-caption">Placing cookware on the induction surface and exploring the front controls in the VR prototype.</figcaption>
+      </figure>
+
+      <!-- 4. Story -->
+      <section class="ap-story">
+        <h2>Let the cook choose</h2>
+        <div>
+            <p>I explored assigning cookware to the nearest available knob and letting the cook choose one. In the flow I developed further, white rings show which knobs are available. The first turn assigns the pot and turns the ring blue. Further turns adjust the power.</p>
+        </div>
+      </section>
+
+      <figure class="ap-detail">
+        <img src="images/vr-cooktop-map.jpg" width="1385" height="689" alt="Close-up of the prototype’s cooktop map. An assigned blue marker shows power level 4 and Knob 1; a white marker reads Turn a knob." loading="lazy">
+        <figcaption>The cooktop map distinguishes assigned cookware from cookware waiting for a knob.</figcaption>
+      </figure>
+
+      <section class="ap-story">
+        <h2>See what each knob controls</h2>
+        <div>
+            <p>A small map on the cooking surface shows the cookware and its power levels. Touching a knob highlights its marker; touching a marker brightens the connected knob. This gives the cook a way to check the connection from either end.</p>
+        </div>
+      </section>
+
+      <section class="ap-story">
+        <h2>Move the pot, keep the connection</h2>
+        <div>
+            <p>Sliding a pot moves its marker on the map while keeping the same knob assignment and power setting. Lifting it pauses the simulated cooking and changes the marker to Paused. Putting it back down restores its previous setting.</p>
+        </div>
+      </section>
+
+    </main>
+
+
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

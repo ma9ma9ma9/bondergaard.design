@@ -1,0 +1,110 @@
+/* ============================================================
+   APPLIANCE PROJECTS – Appliance Interactions in VR and
+   Context-Based Haptics. Video, story sections, detail image
+   and credit, scoped to .ap-* so the rest of the site is untouched.
+   ============================================================ */
+
+.ap-film,
+.ap-story,
+.ap-detail {
+  --ap-muted: rgba(245, 245, 245, 0.7);
+  --ap-focus: #99cfff;
+}
+
+/* --- Demonstration video ----------------------------------- */
+
+.ap-film { margin: 0 0 64px; }
+
+/* The complete 16:9 frame stays visible. */
+.ap-film video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: var(--grey-subtle);
+}
+
+.ap-film figcaption {
+  max-width: 78ch;
+  margin-top: 16px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ap-muted);
+}
+
+/* --- Story sections: heading left, text right -------------- */
+
+.ap-story {
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) minmax(0, 1.65fr);
+  gap: 36px;
+  padding: 28px 0 32px;
+  border-top: 1px solid var(--grey-line);
+}
+
+.ap-story:last-child { margin-bottom: 64px; }
+
+.ap-story h2 {
+  max-width: 19ch;
+  font-size: clamp(23px, 2.2vw, 29px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.ap-story p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--white);
+}
+
+.ap-story p + p { margin-top: 16px; }
+
+.ap-story .ap-credit {
+  font-size: 15px;
+  color: var(--ap-muted);
+}
+
+.ap-credit a {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-color: rgba(245, 245, 245, 0.5);
+  transition: text-decoration-color 0.2s;
+}
+
+.ap-credit a:hover { text-decoration-color: var(--white); }
+
+/* --- Detail image ------------------------------------------ */
+
+.ap-detail { margin: 32px 0 0; }
+
+.ap-detail img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ap-detail figcaption {
+  margin: 14px 0 26px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ap-muted);
+}
+
+/* --- Focus ------------------------------------------------- */
+
+.ap-credit a:focus-visible {
+  outline: 2px solid var(--ap-focus);
+  outline-offset: 4px;
+}
+
+/* --- Phones ------------------------------------------------ */
+
+@media (max-width: 720px) {
+  .ap-film { margin-bottom: 40px; }
+  .ap-story { grid-template-columns: 1fr; gap: 14px; padding: 24px 0 28px; }
+  .ap-story h2 { max-width: none; font-size: 25px; }
+  .ap-story p { font-size: 16px; line-height: 1.8; }
+}
